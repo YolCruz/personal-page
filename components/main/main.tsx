@@ -28,7 +28,7 @@ const Main = () => {
             I like to solve coding problems for fun
             </p>
             <div id="hero-contact" className="my-3 flex gap-x-2">
-              <button className="bg-green-900 px-6 py-3 rounded-lg text-2xl">
+              <button className="bg-green-900 p-3 rounded-lg text-xl">
                 Contact Me
               </button>
               <div className="flex gap-x-16">
