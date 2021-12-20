@@ -58,7 +58,7 @@ const Main = () => {
         </div>
         <div id="image" className="mx-auto shadow-slate-900 shadow-lg">
           <Image
-            src="/Rectangle 10 (1).svg"
+            src="/sunset.svg"
             alt="Mountains and the sky in a sunset"
             width={680}
             height={516}
