@@ -2,10 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Header from "../components/header/header";
 import Main from "../components/main/main";
+import styles from "../styles/Home.module.scss"
 
 const Home: NextPage = () => {
   return (
-    <div className="bg-mountain bg-no-repeat bg-cover bg-left-top min-w-fit">
+    <div className={styles.home_page}>
       <Head>
         <title>Yol Cruz website</title>
         <meta
