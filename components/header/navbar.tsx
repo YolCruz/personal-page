@@ -13,17 +13,17 @@ const Navbar = (props: Props) => {
           className={styles.primary_nav_ul}
         >
           <li>
-            <a href="/">
+            <a href="#">
               <span aria-hidden="true">00</span>contact
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="#">
               <span aria-hidden="true">01</span>portfolio
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="#">
               <span aria-hidden="true">02</span>about
             </a>
           </li>
