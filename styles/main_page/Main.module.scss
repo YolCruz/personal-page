@@ -1,0 +1,71 @@
+//* Tailwind
+.hero_container {
+  @apply w-11/12 max-w-2xl mx-auto;
+}
+
+.avatar_wrapper {
+  @apply mb-10 w-52 -rotate-12 aspect-square bg-green-800 flex mx-auto shadow-slate-700 shadow-xl;
+}
+
+.avatar {
+  @apply flex rotate-12 shadow-slate-700 shadow-xl;
+}
+
+.description {
+  @apply font-numans text-blue-50 bg-black bg-opacity-60 rounded-xl py-5 px-10 flex flex-col gap-6;
+  h1 {
+    @apply text-5xl;
+  }
+  p {
+    @apply text-2xl;
+  }
+}
+
+.contact {
+  @apply my-3 flex gap-x-2;
+  button {
+    @apply bg-green-900 p-3 rounded-lg text-xl;
+  }
+}
+
+.instagram {
+  @apply absolute w-14 aspect-square;
+  background: url("https://api.iconify.design/akar-icons/instagram-fill.svg?color=white")
+    no-repeat center center / contain;
+}
+
+.github {
+  @apply absolute w-14 aspect-square;
+  background: url("https://api.iconify.design/akar-icons/github-fill.svg?color=white")
+    no-repeat center center / contain;
+}
+
+.image_extra {
+  @apply mx-auto shadow-slate-900 shadow-lg;
+}
+
+//* Grid
+.main_content {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "image";
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 2rem;
+}
+.hero_container {
+  grid-area: hero;
+  align-self: center;
+}
+.image_extra {
+  grid-area: image;
+  align-self: center;
+}
+
+@media (min-width: 1000px) {
+  .main_content {
+    grid-template-areas: "hero image";
+    min-height: calc(100vh - 5rem);
+  }
+}

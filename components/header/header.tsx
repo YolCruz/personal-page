@@ -1,41 +1,45 @@
-import * as React from "react";
+import React from "react";
 import Navbar from "./navbar";
+import styles from "../../styles/main_page/Header.module.scss"
 
 export interface Props {}
 
 export interface State {
-  navVisibility: string
+  navVisible: boolean
 }
 
 class Header extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
-    this.state = { navVisibility: "false" }
+    this.state = { navVisible: false }
   }
 
   changeNavVisibility = () => {
-    console.log("Changing...")
-      if (this.state.navVisibility === "false") {
-        this.setState({ navVisibility: "true" });
+      if (this.state.navVisible === false) {
+        this.setState((state) => {
+          return { navVisible: true }
+        });
       } else {
-        this.setState({ navVisibility: "false" });
+        this.setState((state) => {
+          return { navVisible: false }
+        });
       }
   }
   render() {
     return (
-      <header className="flex items-center justify-between my-0 px-4 py-4">
-        <div className="font-extrabold text-5xl text-blue-50">YC</div>
+      <header className={styles.header}>
+        <div className={styles.logo}>YC</div>
 
         <button
           onClick={this.changeNavVisibility}
           aria-controls="primary-navigation"
-          aria-expanded={this.state.navVisibility === "true"}
-          className="primary-navigation-toggle fixed top-8 right-8 z-50 w-8 aspect-square border-0 sm:hidden"
+          aria-expanded={this.state.navVisible}
+          className={styles.primary_nav_toggle}
         >
-          <span className="visually-hidden">Menu</span>
+          <span className="sr-only">Menu</span>
         </button>
 
-        <Navbar visibility={this.state.navVisibility} />
+        <Navbar visibility={this.state.navVisible} />
       </header>
     );
   }

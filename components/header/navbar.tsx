@@ -1,5 +1,7 @@
+import styles from "../../styles/main_page/Navbar.module.scss"
+
 export interface Props {
-  visibility: string;
+  visibility: boolean;
 }
 
 const Navbar = (props: Props) => {
@@ -8,20 +10,20 @@ const Navbar = (props: Props) => {
         <ul
           id="primary-navigation"
           data-visible={props.visibility}
-          className="primary-navigation-ul flex fixed z-40 flex-col items-start text-blue-50 text-2xl m-0 inset-y-0 right-0 left-1/3 py-40 px-8 gap-8 translate-x-full duration-300 ease-out sm:p-0 sm:fixed sm:flex-row sm:items-center sm:gap-20 sm:translate-x-0 sm:px-6 sm:py-2 sm:h-min sm:w-min sm:right-0 sm:left-auto sm:mx-0"
+          className={styles.primary_nav_ul}
         >
-          <li className="">
-            <a href="#">
+          <li>
+            <a href="/">
               <span aria-hidden="true">00</span>contact
             </a>
           </li>
-          <li className="">
-            <a href="#">
+          <li>
+            <a href="/">
               <span aria-hidden="true">01</span>portfolio
             </a>
           </li>
-          <li className="">
-            <a href="#">
+          <li>
+            <a href="/">
               <span aria-hidden="true">02</span>about
             </a>
           </li>

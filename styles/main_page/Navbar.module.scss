@@ -1,0 +1,34 @@
+@mixin blur-background {
+  background: hsl(0 0% 0% / 0.75);
+  @supports (backdrop-filter: blur(1rem)) {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+  }
+}
+
+.primary_nav_ul {
+  @apply flex fixed z-40 flex-col items-start text-blue-50 text-2xl m-0 inset-y-0 right-0 left-1/3 py-40 px-8 gap-8 translate-x-full duration-300 ease-out;
+
+  a {
+    & > [aria-hidden="true"] {
+      @apply font-bold;
+      margin-inline-end: 0.75rem;
+    }
+
+    span[aria-hidden] {
+      @media (min-width: 640px) and (max-width: 880px) {
+        display: none;
+      }
+    }
+  }
+
+  &[data-visible="true"] {
+    @apply translate-x-0;
+  }
+
+  @include blur-background;
+
+  @screen sm {
+    @apply p-0 fixed flex-row items-center gap-20 translate-x-0 px-6 py-2 h-min w-min right-0 left-auto mx-0;
+  }
+}

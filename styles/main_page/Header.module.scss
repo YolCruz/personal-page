@@ -1,0 +1,19 @@
+.header {
+  @apply flex items-center justify-between my-0 p-4;
+}
+
+.logo {
+  @apply font-extrabold text-5xl text-blue-50;
+}
+
+.primary_nav_toggle {
+  @apply fixed top-8 right-8 z-50 w-8 aspect-square border-0 bg-hamburger bg-no-repeat bg-center bg-contain;
+
+  &[aria-expanded="true"] {
+    @apply bg-close-icon bg-no-repeat bg-center bg-contain;
+  }
+
+  @screen sm {
+    @apply hidden;
+  }
+}
