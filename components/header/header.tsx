@@ -1,48 +1,24 @@
-import React from "react";
+import { useState } from "react";
+import DarkButton from "./darkButton";
 import Navbar from "./navbar";
-import styles from "../../styles/main_page/Header.module.scss"
+import NavButton from "./navButton";
 
-export interface Props {}
+export default function Header() {
+  const [navVisible, changeNavVisible] = useState(false);
+  return (
+    <header className="fixed z-40 bg-white dark:bg-slate-700 w-screen h-16 my-0 px-4 py-2 text-black dark:text-white duration-300 ease-out">
+      <div className="flex items-center justify-between">
+        <div className="z-50 font-work font-extrabold text-5xl text-blue-50;">
+          YC
+        </div>
 
-export interface State {
-  navVisible: boolean
+        <div className="flex items-center gap-4">
+          <DarkButton />
+
+          <NavButton navVisible={navVisible} changeVisible={changeNavVisible} />
+        </div>
+      </div>
+      <Navbar visibility={navVisible} />
+    </header>
+  );
 }
-
-class Header extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props)
-    this.state = { navVisible: false }
-  }
-
-  changeNavVisibility = () => {
-      if (this.state.navVisible === false) {
-        this.setState((state) => {
-          return { navVisible: true }
-        });
-      } else {
-        this.setState((state) => {
-          return { navVisible: false }
-        });
-      }
-  }
-  render() {
-    return (
-      <header className={styles.header}>
-        <div className={styles.logo}>YC</div>
-
-        <button
-          onClick={this.changeNavVisibility}
-          aria-controls="primary-navigation"
-          aria-expanded={this.state.navVisible}
-          className={styles.primary_nav_toggle}
-        >
-          <span className="sr-only">Menu</span>
-        </button>
-
-        <Navbar visibility={this.state.navVisible} />
-      </header>
-    );
-  }
-}
-
-export default Header;

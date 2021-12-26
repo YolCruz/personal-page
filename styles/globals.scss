@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .slider {
+    transform: translateX(100%);
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+    &[data-visible="true"] {
+      transform: translateX(0%);
+    }
+    @screen sm {
+      transform: translateX(0%);
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+}

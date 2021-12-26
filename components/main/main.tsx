@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import styles from "../../styles/main_page/Main.module.scss";
+import { Icon } from "@iconify/react";
 
 export interface Props {}
 
@@ -23,50 +23,48 @@ class Main extends React.Component<Props, State> {
   };
   render() {
     return (
-      <div className={styles.main_content}>
-        <div className={styles.hero_container}>
-          <div className={styles.avatar_wrapper}>
-            <div className={styles.avatar}>
+      <div className="pt-24 grid grid-cols-1 grid-rows-2 gap-8 lg:grid-cols-2 lg:grid-rows-1">
+        <div className="w-11/12 max-w-2xl mx-auto slef-center">
+          <div className="mb-10 w-40 -rotate-12 aspect-square bg-green-800 flex mx-auto shadow-gray-800 shadow-xl">
+            <div className="flex rotate-12 shadow-gray-800 shadow-xl">
               <Image
                 src="/Me_Avatar.jpg"
-                height={208}
-                width={208}
+                height={160}
+                width={160}
                 alt="The developer"
               />
             </div>
           </div>
-          <main className={styles.description}>
-            <h1>Hi, I&apos;m Yoltic</h1>
-            <p>I desing & build websites.</p>
-            <p>I like to solve coding problems for fun!</p>
-            <div className={styles.contact}>
-              <button>Contact Me</button>
-              <div className="flex gap-x-16">
-                <div className="">
-                  <a
-                    href="https://www.instagram.com/yoltic.cruz/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.instagram}
-                  >
-                    <span className="sr-only">Instagram</span>
-                  </a>
-                </div>
-                <div className="github">
-                  <a
-                    href="https://github.com/YolCruz"
-                    target="_blank"
-                    rel="noreferrer"
-                    className={styles.github}
-                  >
-                    <span className="sr-only">Github</span>
-                  </a>
-                </div>
+          <main className="font-numans text-black dark:text-white bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-60 rounded-xl py-5 px-5 flex flex-col gap-2 duration-300 ease-out">
+            <h1 className="text-4xl">Hi, I&apos;m Yoltic</h1>
+            <p className="text-2xl">I desing & build websites.</p>
+            <p className="text-2xl">I like to solve coding problems for fun!</p>
+            <div className="my-3 flex gap-x-2 justify-between">
+              <button className="text-white bg-green-900 p-2 rounded-lg text-xl">
+                Contact Me
+              </button>
+              <div className="flex gap-x-2">
+                <a
+                  href="https://www.instagram.com/yoltic.cruz/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="bg-instagram dark:bg-instagram-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
+                  <span className="sr-only">Instagram</span>
+                </a>
+                <a
+                  href="https://github.com/YolCruz"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className="bg-github dark:bg-github-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
+                  <span className="sr-only">Github</span>
+                </a>
               </div>
             </div>
           </main>
         </div>
-        <div className={styles.image_extra}>
+        <div className="mx-auto hidden self-center lg:block">
           <Image
             src="/sunset.svg"
             alt="Mountains and the sky in a sunset"
