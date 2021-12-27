@@ -31,11 +31,11 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <div className="bg-mountain bg-no-repeat bg-cover bg-center h-screen snap-start">
+      <div className="bg-mountain bg-no-repeat bg-cover bg-center snap-start">
         <Header />
         <Main />
       </div>
-      <section className="h-screen snap-start bg-gradient-to-b from-sky-200 to-cyan-500 dark:bg-sky-700 duration-300 ease-out">
+      <section className="h-screen snap-start bg-third dark:bg-primary duration-300 ease-out">
         <Apps />
       </section>
     </div>

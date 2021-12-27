@@ -1,11 +1,14 @@
-import LayoutApp from "components/layoutApps";
+import { LayoutApps } from "components/layouts";
 
 export default function Pomodoro() {
   return (
-    <LayoutApp title="Pomodoro App" description="Simple time tracker app based on the pomodoro technic">
+    <LayoutApps
+      title="Pomodoro App"
+      description="Simple time tracker app based on the pomodoro technic"
+    >
       <div>
         <h1>Pomodoro</h1>
       </div>
-    </LayoutApp>
-  )
+    </LayoutApps>
+  );
 }
