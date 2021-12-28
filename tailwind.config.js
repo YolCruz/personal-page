@@ -46,7 +46,8 @@ module.exports = {
           "sun":
           "url('https://api.iconify.design/emojione-v1/sun.svg?width=32&height=32')",
           "moon":
-          "url('https://api.iconify.design/emojione/crescent-moon.svg?width=32&height=32')"
+          "url('https://api.iconify.design/emojione/crescent-moon.svg?width=32&height=32')",
+          "settings": "url('https://api.iconify.design/flat-color-icons/settings.svg')",
       },
       fontFamily: {
         numans: ["Numans", "sans-serif"],

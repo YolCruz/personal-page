@@ -16,7 +16,7 @@ export function LayoutApps({
     <div className="min-h-screen text-black dark:text-white dark:bg-nice-grey duration-300 ease-out">
       <Head>
         <title>{title}</title>
-        <link rel="icon" href="public/YC.svg" />
+        <link rel="icon" href="/YC.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

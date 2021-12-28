@@ -8,7 +8,6 @@ export default function DarkButton() {
       localStorage.setItem("theme", "dark");
     }
     updateDocumentClass();
-    console.log(localStorage.getItem("theme"));
   };
   return (
     <button
