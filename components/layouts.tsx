@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Head from "next/head";
 import Header from "components/header/header";
-import React from "react";
+import React, { useEffect } from "react";
+import { updateDocumentClass } from "utils/darkTheme";
 
 export function LayoutApps({
   children,
@@ -12,6 +13,10 @@ export function LayoutApps({
   title: string;
   description: string;
 }) {
+  useEffect(() => {
+    updateDocumentClass();
+    console.log("render")
+  });
   return (
     <div className="min-h-screen text-black dark:text-white dark:bg-nice-grey duration-300 ease-out">
       <Head>

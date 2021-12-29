@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { MutableRefObject, useState } from "react";
 import DarkButton from "./darkButton";
 import Navbar from "./navbar";
 import NavButton from "./navButton";
+
 
 export default function Header() {
   const [navVisible, changeNavVisible] = useState(false);

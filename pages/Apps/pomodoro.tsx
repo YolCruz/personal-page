@@ -6,19 +6,26 @@ import { clearInterval, setInterval } from "timers";
 export default function Pomodoro() {
   const [text, setText] = useState("START");
   const [mode, setMode] = useState("inactive");
-  const [workMin, setWorkMin] = useState("25");
+  const [workMin, setWorkMin] = useState("00");
   const [restMin, setRestMin] = useState("5");
   const [min, setMin] = useState(workMin);
-  const [sec, setSec] = useState("00");
+  const [sec, setSec] = useState("05");
   const [currentSeconds, setCurrent] = useState(0);
-  const [totalSeconds, setTotal] = useState(parseInt(workMin) * 60);
+  const [totalSeconds, setTotal] = useState(
+    parseInt(workMin) * 60 + parseInt(sec)
+  );
   const [totalDeg, setDeg] = useState(360 / totalSeconds);
+  const [style, setStyle] = useState(`conic-gradient(
+    #be0909 ${currentSeconds * (360 / totalSeconds)}deg,
+    #2f2f2f ${currentSeconds * (360 / totalSeconds)}deg
+  )`);
+  const [display, setDisplay] = useState("none")
 
   const timer = useRef<NodeJS.Timer>();
 
   //* When the time of 'work' changes, update totalSeconds and totalDeg
   useEffect(() => {
-    const newTotal = parseInt(workMin) * 60;
+    const newTotal = parseInt(workMin) * 60 + parseInt(sec);
     setTotal(newTotal);
     setDeg(360 / newTotal);
     setMin(workMin);
@@ -34,6 +41,9 @@ export default function Pomodoro() {
     } else {
       if (timer.current) {
         clearInterval(timer.current);
+        setMin(workMin);
+        setSec("00");
+        setCurrent(0);
       }
     }
     return () => {
@@ -44,13 +54,11 @@ export default function Pomodoro() {
   }, [text]);
 
   // //* Change between WORK and REST
-  //   useEffect(() => {
-  //     if (mode === "work") {
-
-  //     } else {
-
-  //     }
-  //   }, [mode]);
+  useEffect(() => {
+    if (mode === "work") {
+    } else {
+    }
+  }, [mode]);
 
   useEffect(() => {
     const remainingSec = Math.floor(
@@ -65,56 +73,17 @@ export default function Pomodoro() {
     setMin(() => {
       return remainingMin.length === 2 ? remainingMin : `0${remainingMin}`;
     });
-    setWorkMin;
+    setStyle(() => {
+      return `conic-gradient(
+        #be0909 ${currentSeconds * (360 / totalSeconds)}deg,
+        #2f2f2f ${currentSeconds * (360 / totalSeconds)}deg
+      )`
+    })
+    if (currentSeconds === totalSeconds) {
+      setText("START");
+      setDisplay("block")
+    }
   }, [currentSeconds]);
-
-  // let style = `conic-gradient(
-  //   #9d0000 ${
-  //     stateProgress.currentProgress * (360 / stateProgress.totalProgress)
-  //   }deg,
-  //   #2b2930 ${
-  //     stateProgress.currentProgress * (360 / stateProgress.totalProgress)
-  //   }deg
-  //   )`;
-
-  // const tick = () => {
-
-  //   setStateProgress((prevState) => {
-  //     return {
-  //       secRem,
-  //       minRem,
-  //       currentProgress: prevState.currentProgress + 1,
-  //       totalProgress: prevState.totalProgress,
-  //     };
-  //   });
-  //   if (
-  //     stateProgress.totalProgress === stateProgress.currentProgress &&
-  //     timer
-  //   ) {
-  //     clearTimer();
-  //   }
-  // };
-
-  // const clearTimer = () => {
-  //   if (timer) {
-  //     style = "conic-gradient(#00aa51 360deg, #00aa51 360deg)";
-  //     clearInterval(timer);
-  //     timer = null;
-  //   }
-  //   setStateTimer((prev) => {
-  //     return {
-  //       ...prev,
-  //       text: "START",
-  //     };
-  //   });
-  //   setStateProgress((prev) => {
-  //     return {
-  //       ...prev,
-  //       secRem: stateTimer.seconds,
-  //       minRem: stateTimer.minutesWork,
-  //       currentProgress: 0,
-  //     };
-  //   });
 
   return (
     <LayoutApps
@@ -124,10 +93,13 @@ export default function Pomodoro() {
       <div className="aspect-square w-11/12 bg-green-500 max-w-2xl mx-auto grid place-items-center">
         <div
           className="rounded-full w-11/12 aspect-square grid place-items-center shadow-xl"
-          // style={{
-          //   background: `${style}`,
-          // }}
+          style={{
+            background: `${style}`,
+          }}
         >
+          <div className="w-screen h-screen z-50 fixed bg-black bg-opacity-30 inset-0 duration-300 ease-out" style={{
+            display: `${display}`
+          }} />
           <div className="flex flex-col gap-6 items-center justify-center w-11/12 rounded-full aspect-square bg-cyan-400 shadow-lg">
             <div className="text-6xl">
               <span id="minutes">{min}</span>
