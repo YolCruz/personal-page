@@ -120,7 +120,6 @@ export default function Pomodoro() {
             className="w-screen h-screen z-20 fixed bg-black bg-opacity-60 inset-0 duration-300 ease-out place-items-center"
             style={{
               display: `${displayRest}`,
-              // display: `grid`,
             }}
           >
             <div className="w-9/12 h-fit py-8 max-w-2xl bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-80 rounded-lg border-2 border-rose-800 shadow-lg shadow-rose-800 duration-300 ease-out">
