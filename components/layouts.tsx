@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import Header from "components/header/header";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { updateDocumentClass } from "utils/darkTheme";
 
 export function LayoutApps({
@@ -13,10 +13,14 @@ export function LayoutApps({
   title: string;
   description: string;
 }) {
+  const [theme, setTheme] = useState("")
   useEffect(() => {
+    const theme = localStorage.getItem("theme")
+    if (theme) {
+      setTheme(theme)
+    }
     updateDocumentClass();
-    console.log("render")
-  });
+  }, [theme]);
   return (
     <div className="min-h-screen text-black dark:text-white dark:bg-nice-grey duration-300 ease-out">
       <Head>

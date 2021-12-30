@@ -7,10 +7,14 @@ import { updateDocumentClass } from "utils/darkTheme";
 import { useEffect, useRef, useState } from "react";
 
 const Home: NextPage = () => {
-  //TODO: Add a state or something that stores the current theme of the page. Then update that state when changing the page theme, and reference it to the useEffect hook so it only triggers a render when the theme has changed
+  const [theme, setTheme] = useState("");
   useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if (theme) {
+      setTheme(theme);
+    }
     updateDocumentClass();
-  });
+  }, [theme]);
   return (
     <div className="snap-y snap-mandatory max-h-screen overflow-y-auto">
       <Head>
