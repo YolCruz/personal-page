@@ -12,7 +12,7 @@ export default function PomodoroDesc() {
     <LayoutCards>
       <LayoutCardsImage>
         <Image 
-          src="/pomodoro screenshot.png"
+          src="/pomodoro_screenshot.png"
           height={774}
           width={774}
           alt="How the pomodoro looks"
