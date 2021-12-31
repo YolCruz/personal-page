@@ -28,8 +28,6 @@ export default function Pomodoro() {
     useState("inline-block");
 
   const timer = useRef<NodeJS.Timer>();
-
-  //* When the time of 'work' changes, update totalSeconds and totalDeg
   useEffect(() => {
     setTotal(parseInt(workMin) * 60);
     setMin(workMin);
@@ -39,7 +37,6 @@ export default function Pomodoro() {
     setDeg(360 / totalSeconds);
   }, [totalSeconds]);
 
-  // //* Change between WORK, REST and INACTIVE modes
   useEffect(() => {
     if (mode === "work") {
       timer.current = setInterval(() => {
@@ -300,7 +297,7 @@ export default function Pomodoro() {
         </div>
         <div className="w-11/12 max-w-3xl flex flex-col mt-10 gap-4 bg-sky-200 dark:bg-black dark:bg-opacity-70 mx-auto p-6 xl:p-10 rounded-xl text-left font-open-sans duration-300 ease-out">
           <h1 className="text-3xl sm:text-4xl mb-4">What I learned doing this proyect:</h1>
-          <h2 className="text-2xl sm:text-3xl text-red-600 font-bold">React hooks</h2>
+          <h2 className="text-2xl sm:text-3xl text-red-400 font-bold">React hooks</h2>
           <p className="text-xl sm:text-2xl mb-2">
             While creating the functionality of this application, I learned to
             use React hooks such as{" "}
@@ -316,9 +313,9 @@ export default function Pomodoro() {
               useRef()
             </code>.
           </p>
-          <h2 className="text-2xl sm:text-3xl text-purple-600 font-bold">Conditional rendering of elements</h2>
+          <h2 className="text-2xl sm:text-3xl text-purple-400 font-bold">Conditional rendering of elements</h2>
           <p className="text-xl sm:text-2xl mb-2">There are many elements that only render when certain conditions are met. For example, starting the timer and then trying to stop it will render a screen that asks for a confirmation.</p>
-          <h2 className="text-2xl sm:text-3xl text-green-600 font-bold">Handle click events</h2>
+          <h2 className="text-2xl sm:text-3xl text-green-400 font-bold">Handle click events</h2>
           <p className="text-xl sm:text-2xl">All the interactions are done with buttons that change some state when you click them.</p>
         </div>
       </div>

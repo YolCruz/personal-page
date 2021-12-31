@@ -51,7 +51,7 @@ class Main extends React.Component<Props, State> {
                 <a
                   href="https://www.instagram.com/yoltic.cruz/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <div className="bg-instagram dark:bg-instagram-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
                   <span className="sr-only">Instagram</span>
@@ -59,7 +59,7 @@ class Main extends React.Component<Props, State> {
                 <a
                   href="https://github.com/YolCruz"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <div className="bg-github dark:bg-github-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
                   <span className="sr-only">Github</span>

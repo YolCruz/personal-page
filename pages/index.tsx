@@ -23,7 +23,9 @@ const Home: NextPage = () => {
           name="description"
           content="Personal website of Yoltic Cruz Tello"
         />
-        <link rel="icon" href="/YC.svg" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="/YC.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
