@@ -16,7 +16,7 @@ const Home: NextPage = () => {
     updateDocumentClass();
   }, [theme]);
   return (
-    <div className="snap-y snap-mandatory max-h-screen overflow-y-auto">
+    <div className="snap-y snap-mandatory md:snap-proximity max-h-screen overflow-y-auto">
       <Head>
         <title>Yol Cruz website</title>
         <meta
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         <Header />
         <Main />
       </div>
-      <section className="h-screen snap-start bg-third dark:bg-primary duration-300 ease-out">
+      <section className="h-screen snap-start bg-sky-200 dark:bg-primary duration-300 ease-out">
         <Apps />
       </section>
     </div>
