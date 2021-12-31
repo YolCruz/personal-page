@@ -13,11 +13,11 @@ export function LayoutApps({
   title: string;
   description: string;
 }) {
-  const [theme, setTheme] = useState("")
+  const [theme, setTheme] = useState("");
   useEffect(() => {
-    const theme = localStorage.getItem("theme")
+    const theme = localStorage.getItem("theme");
     if (theme) {
-      setTheme(theme)
+      setTheme(theme);
     }
     updateDocumentClass();
   }, [theme]);
@@ -61,7 +61,7 @@ export function LayoutCards({ children }: { children: React.ReactNode }) {
 
 export function LayoutCardsImage({ children }: { children: React.ReactNode }) {
   return (
-    <div className="aspect-square w-64 sm:w-72 bg-primary dark:bg-secondary rounded-lg opacity-75 self-center justify-self-center duration-500 ease-out grid place-content-center">
+    <div className="aspect-square w-64 sm:w-72 bg-primary dark:bg-secondary rounded-lg opacity-100 self-center justify-self-center grid place-content-center">
       {children}
     </div>
   );
@@ -70,20 +70,25 @@ export function LayoutCardsImage({ children }: { children: React.ReactNode }) {
 export function LayoutCardsContent({
   url,
   title,
-  desc
+  desc,
+  date,
 }: {
   url: string;
   title: string;
-  desc: string
+  desc: string;
+  date: string;
 }) {
   return (
-    <div>
+    <div className="font-open-sans">
       <Link href={url}>
         <a className="relative text-2xl text-blue-500 hover:text-blue-400 active:bottom-1 underline underline-offset-2 decoration-blue-300">
           {title}
         </a>
       </Link>
       <p className="text-lg">{desc}</p>
+      <p className="text-right text-md">
+        Date finished: <span className="text-red-600 font-bold">{date}</span>
+      </p>
     </div>
   );
 }

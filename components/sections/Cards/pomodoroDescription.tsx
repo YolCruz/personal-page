@@ -22,6 +22,7 @@ export default function PomodoroDesc() {
         url="/Apps/pomodoro"
         title="Pomodoro"
         desc="Timer to focus on your projects with 25 min work & 5 min rest"
+        date="dic 30 21"
       />
     </LayoutCards>
   );
