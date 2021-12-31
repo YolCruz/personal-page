@@ -69,7 +69,7 @@ export default function Pomodoro() {
         clearInterval(timer.current);
       }
     };
-  }, [mode]);
+  }, [mode, restMin, workMin]);
 
   useEffect(() => {
     const remainingSec = Math.floor(
@@ -97,7 +97,7 @@ export default function Pomodoro() {
       setText("START");
       setDisplayRest("grid");
     }
-  }, [currentSeconds]);
+  }, [currentSeconds, totalSeconds, totalDeg]);
 
   useEffect(() => {
     if (settings) {
