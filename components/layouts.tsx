@@ -59,7 +59,7 @@ export function LayoutCards({ children }: { children: React.ReactNode }) {
 
 export function LayoutCardsImage({ children }: { children: React.ReactNode }) {
   return (
-    <div className="aspect-square w-32 bg-primary dark:bg-secondary rounded-lg opacity-75 self-center justify-self-center duration-500 ease-out">
+    <div className="aspect-square w-64 sm:w-72 bg-primary dark:bg-secondary rounded-lg opacity-75 self-center justify-self-center duration-500 ease-out grid place-content-center">
       {children}
     </div>
   );

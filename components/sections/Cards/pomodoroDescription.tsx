@@ -10,7 +10,14 @@ import {
 export default function PomodoroDesc() {
   return (
     <LayoutCards>
-      <LayoutCardsImage>{}</LayoutCardsImage>
+      <LayoutCardsImage>
+        <Image 
+          src="/pomodoro screenshot.png"
+          height={774}
+          width={774}
+          alt="How the pomodoro looks"
+        />
+      </LayoutCardsImage>
       <LayoutCardsContent
         url="/Apps/pomodoro"
         title="Pomodoro"
