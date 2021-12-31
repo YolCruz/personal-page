@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Numans&family=Open+Sans&family=Work+Sans&family=Yanone+Kaffeesatz&display=swap');
+
 @layer components {
   .slider {
     transform: translateX(100%);

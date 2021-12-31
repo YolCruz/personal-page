@@ -77,7 +77,7 @@ export function LayoutCardsContent({
   return (
     <div>
       <Link href={url}>
-        <a className="relative text-2xl text-blue-500 hover:text-blue-400 active:bottom-1">
+        <a className="relative text-2xl text-blue-500 hover:text-blue-400 active:bottom-1 underline underline-offset-2 decoration-blue-300">
           {title}
         </a>
       </Link>

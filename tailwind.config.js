@@ -18,7 +18,7 @@ module.exports = {
       },
       screens: {
         "md-min-max": { min: "640px", max: "867px" },
-        "sm-max": {max: "641px"},
+        "sm-max": { max: "641px" },
       },
       backgroundImage: {
         "waves-pattern": "url('/background wave.svg')",
@@ -35,23 +35,24 @@ module.exports = {
           "url('https://api.iconify.design/ep/close.svg?color=white&width=32&height=32')",
         "gradient-radial":
           "radial-gradient(circle at center, var(--tw-gradient-stops))",
-          "instagram":
+        instagram:
           'url("https://api.iconify.design/akar-icons/instagram-fill.svg?")',
         "instagram-white":
           'url("https://api.iconify.design/akar-icons/instagram-fill.svg?color=white")',
-          "github":
-          'url("https://api.iconify.design/akar-icons/github-fill.svg?")',
+        github: 'url("https://api.iconify.design/akar-icons/github-fill.svg?")',
         "github-white":
           'url("https://api.iconify.design/akar-icons/github-fill.svg?color=white")',
-          "sun":
-          "url('https://api.iconify.design/emojione-v1/sun.svg?width=32&height=32')",
-          "moon":
-          "url('https://api.iconify.design/emojione/crescent-moon.svg?width=32&height=32')",
-          "settings": "url('https://api.iconify.design/flat-color-icons/settings.svg')",
+        sun: "url('https://api.iconify.design/emojione-v1/sun.svg?width=32&height=32')",
+        moon: "url('https://api.iconify.design/emojione/crescent-moon.svg?width=32&height=32')",
+        settings:
+          "url('https://api.iconify.design/flat-color-icons/settings.svg')",
       },
       fontFamily: {
         numans: ["Numans", "sans-serif"],
         work: ["Work Sans", "sans-serif"],
+        lato: ["Lato", "sans-serif"],
+        "open-sans": ["Open Sans", "sans-serif"],
+        yanone: ["Yanone Kaffeesatz", "sans-serif"],
       },
     },
   },
