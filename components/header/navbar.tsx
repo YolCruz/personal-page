@@ -1,4 +1,3 @@
-import styles from "styles/Navbar.module.scss";
 import Link from "next/link";
 
 export interface Props {

@@ -4,7 +4,7 @@ import Header from "components/header/header";
 import Main from "components/main/main";
 import Apps from "components/sections/Apps";
 import { updateDocumentClass } from "utils/darkTheme";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
   const [theme, setTheme] = useState("");

@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
 
 export interface Props {}
 

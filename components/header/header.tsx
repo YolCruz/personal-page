@@ -1,4 +1,4 @@
-import { MutableRefObject, useState } from "react";
+import { useState } from "react";
 import DarkButton from "./darkButton";
 import Navbar from "./navbar";
 import NavButton from "./navButton";
