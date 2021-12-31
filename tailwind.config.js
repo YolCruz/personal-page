@@ -39,6 +39,8 @@ module.exports = {
           'url("https://api.iconify.design/akar-icons/instagram-fill.svg?")',
         "instagram-white":
           'url("https://api.iconify.design/akar-icons/instagram-fill.svg?color=white")',
+        "linkedin": "url('https://api.iconify.design/akar-icons/linkedin-fill.svg?')",
+        "linkedin-white": "url('https://api.iconify.design/akar-icons/linkedin-fill.svg?color=white')",
         github: 'url("https://api.iconify.design/akar-icons/github-fill.svg?")',
         "github-white":
           'url("https://api.iconify.design/akar-icons/github-fill.svg?color=white")',

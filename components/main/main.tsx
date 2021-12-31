@@ -43,18 +43,18 @@ class Main extends React.Component<Props, State> {
               </p>
             </div>
 
-            <div className="my-3 flex gap-x-2 justify-between">
+            <div className="my-3 flex flex-col sm:flex-row gap-4 justify-between">
               <button className="text-white bg-green-900 p-2 rounded-lg text-xl">
                 Contact Me
               </button>
               <div className="flex gap-x-2">
                 <a
-                  href="https://www.instagram.com/yoltic.cruz/"
+                  href="https://www.linkedin.com/in/yolcruztello/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <div className="bg-instagram dark:bg-instagram-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
-                  <span className="sr-only">Instagram</span>
+                  <div className="bg-linkedin dark:bg-linkedin-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
+                  <span className="sr-only">Linkedin</span>
                 </a>
                 <a
                   href="https://github.com/YolCruz"
