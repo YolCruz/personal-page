@@ -1,84 +1,54 @@
-import React from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { Icon } from "@iconify/react";
+import Header from "./header";
+import WelcomeAnimation from "./welcome_animation";
+import WebDev from "./web_dev";
+import Blog from "./blog";
+import styles from "styles/main.module.scss";
+import Skills from "./skills";
+import About from "./about";
+import { useInView } from "react-intersection-observer";
+import animations from "styles/animations.module.scss";
 
-export interface Props {}
-
-export interface State {
-  contactVisible: boolean;
+interface Props {
+  websites: {
+    date: string;
+    title: string;
+    id: string;
+    description: string;
+    descriptionLong: string;
+    picture: string;
+    alt: string
+  }[];
+  posts: {
+    title: string;
+    date: string;
+    summary: string;
+    id: string;
+  }[]
 }
 
-class Main extends React.Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { contactVisible: false };
-  }
+export default function MainPage({websites, posts}: Props) {
 
-  changeContactVisibility = () => {
-    if (this.state.contactVisible === false) {
-      this.setState({ contactVisible: true });
-    } else {
-      this.setState({ contactVisible: false });
-    }
-  };
-  render() {
-    return (
-      <div className="h-screen pt-24 grid auto-cols-auto auto-rows-auto gap-8 lg:grid-cols-2 lg:grid-rows-1">
-        <div className="w-11/12 max-w-2xl mx-auto lg:self-center">
-          <div className="mb-10 w-40 -rotate-12 aspect-square bg-green-800 flex mx-auto shadow-gray-800 shadow-xl">
-            <div className="flex rotate-12 shadow-gray-800 shadow-xl">
-              <Image
-                src="/Me_Avatar.jpg"
-                height={160}
-                width={160}
-                alt="The developer"
-              />
-            </div>
-          </div>
-          <main className="font-numans text-black dark:text-white bg-white dark:bg-black bg-opacity-80 dark:bg-opacity-60 rounded-xl py-5 px-5 flex flex-col duration-300 ease-out">
-            <h1 className="text-4xl mb-6">Hi, I&apos;m Yoltic</h1>
-            <div className="mb-3">
-              <p className="text-2xl">I desing & build websites.</p>
-              <p className="text-2xl">
-                I like to solve coding problems for fun!
-              </p>
-            </div>
-
-            <div className="my-3 flex flex-col sm:flex-row gap-4 justify-between">
-              <button className="text-white bg-green-900 p-2 rounded-lg text-xl">
-                Contact Me
-              </button>
-              <div className="flex gap-x-2">
-                <a
-                  href="https://www.linkedin.com/in/yolcruztello/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="bg-linkedin dark:bg-linkedin-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
-                  <span className="sr-only">Linkedin</span>
-                </a>
-                <a
-                  href="https://github.com/YolCruz"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <div className="bg-github dark:bg-github-white bg-no-repeat bg-cover bg-center aspect-square w-14 duration-300 ease-out" />
-                  <span className="sr-only">Github</span>
-                </a>
-              </div>
-            </div>
-          </main>
-        </div>
-        <div className="mx-auto hidden self-center lg:block">
-          <Image
-            src="/sunset.svg"
-            alt="Mountains and the sky in a sunset"
-            width={680}
-            height={516}
-          />
-        </div>
-      </div>
-    );
-  }
+  return (
+    <>
+      {/* <WelcomeAnimation /> */}
+      <Header enableAnimations={false}/>
+      <main
+        className={`max-h-screen overflow-y-auto overflow-x-hidden bg-dark-blue-main-2 w-screen max-w-full flex flex-col gap-6 text-white overscroll-contain pt-16 md:px-16 md:gap-4`}
+      >
+          <h1
+            className={`font-dancing-script text-center text-4.5xl my-0 pt-4  pb-4 md:text-6xl`}
+          >
+            Yoltic Cruz Tello
+          </h1>
+          <WebDev websites={websites}/>
+          <Blog posts={posts} />
+          <Skills />
+          <About />
+      </main>
+    </>
+  );
 }
-
-export default Main;

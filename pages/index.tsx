@@ -1,24 +1,43 @@
-import type { NextPage } from "next";
 import Head from "next/head";
-import Header from "components/header/header";
-import Main from "components/main/main";
-import Apps from "components/sections/Apps";
-import { updateDocumentClass } from "utils/darkTheme";
-import { useEffect, useState } from "react";
+import MainPage from "components/main/main";
+import { getSortedWebsitesData } from "lib/websites";
+import { getSortedPostsData } from "lib/blog";
+import { NextPage, GetStaticProps } from "next";
 
-const Home: NextPage = () => {
-  const [theme, setTheme] = useState("");
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      setTheme(theme);
-    }
-    updateDocumentClass();
-  }, [theme]);
+interface Props {
+  allWebsitesData: {
+    date: string;
+    title: string;
+    id: string;
+    description: string;
+    descriptionLong: string;
+    picture: string;
+    alt: string;
+  }[];
+  allPostsData: {
+    title: string;
+    date: string;
+    summary: string;
+    id: string;
+  }[];
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allWebsitesData = getSortedWebsitesData();
+  const allPostsData = getSortedPostsData();
+  return {
+    props: {
+      allWebsitesData,
+      allPostsData,
+    },
+  };
+};
+
+const Home: NextPage<Props> = ({ allWebsitesData, allPostsData }) => {
   return (
-    <div className="snap-y snap-mandatory md:snap-proximity max-h-screen overflow-y-auto">
+    <>
       <Head>
-        <title>Yol Cruz website</title>
+        <title>Yoltic Cruz</title>
         <meta
           name="description"
           content="Personal website of Yoltic Cruz Tello"
@@ -37,14 +56,8 @@ const Home: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <div className="bg-mountain bg-no-repeat bg-cover bg-center snap-start">
-        <Header />
-        <Main />
-      </div>
-      <section className="h-screen snap-start bg-sky-200 dark:bg-primary duration-300 ease-out">
-        <Apps />
-      </section>
-    </div>
+      <MainPage websites={allWebsitesData} posts={allPostsData} />
+    </>
   );
 };
 

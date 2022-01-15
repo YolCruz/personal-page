@@ -1,0 +1,216 @@
+.durations {
+  --welcome-duration: 500ms;
+  --welcome-delay: 300ms;
+
+  --text-duration: 500ms;
+  --text-delay: calc(var(--welcome-duration) + var(--welcome-delay) + 200ms);
+
+  --move-div-duration: 800ms;
+  --move-div-delay: calc(var(--text-duration) + var(--text-delay) + 800ms);
+
+  --nav-duration: 300ms;
+  --nav-delay: calc(var(--move-div-duration) + var(--move-div-delay));
+
+  --name-duration: 300ms;
+  --name-delay: calc(var(--nav-delay) + var(--nav-duration) + 100ms);
+
+  --main-card-duration: 300ms;
+  --main-card-delay: calc(var(--name-delay) + var(--name-duration) + 100ms);
+
+  --message-sent-duration: 200ms;
+  --message-sent-div-duration: 2000ms;
+}
+
+.welcome {
+  animation-name: fade-in-slide-down;
+  animation-duration: var(--welcome-duration);
+  animation-delay: var(--welcome-delay);
+  animation-fill-mode: forwards;
+}
+
+.text {
+  animation-name: fade-in-slide-down;
+  animation-duration: var(--text-duration);
+  animation-delay: var(--text-delay);
+  animation-fill-mode: forwards;
+}
+
+.move_div {
+  animation-name: slide-left;
+  animation-duration: var(--move-div-duration);
+  animation-delay: var(--move-div-delay);
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.move_nav {
+  animation-name: slide-down;
+  animation-duration: var(--nav-duration);
+  animation-delay: var(--nav-delay);
+  animation-fill-mode: forwards;
+}
+.move_nav_before {
+  animation-name: slide-up;
+  animation-duration: var(--nav-duration);
+  animation-delay: var(--nav-delay);
+  animation-fill-mode: forwards;
+}
+.name {
+  animation-name: fade-in-slide-down;
+  animation-duration: var(--name-duration);
+  animation-delay: var(--name-delay);
+  animation-fill-mode: forwards;
+}
+.move_main_card {
+  animation-name: fade-in-slide-up;
+  animation-duration: var(--main-card-duration);
+  animation-delay: var(--main-card-delay);
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-fill-mode: forwards;
+}
+.move_card {
+  animation-name: fade-in-slide-up;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
+}
+
+.message_sent {
+  animation-name: message-sent;
+  animation-duration: var(--message-sent-div-duration);
+  animation-fill-mode: forwards;
+}
+
+.loading_letters {
+  animation-name: loading-letters;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.l1 {
+  animation-delay: 0.48s;
+}
+.l2 {
+  animation-delay: 0.6s;
+}
+.l3 {
+  animation-delay: 0.72s;
+}
+.l4 {
+  animation-delay: 0.84s;
+}
+.l5 {
+  animation-delay: 0.96s;
+}
+.l6 {
+  animation-delay: 1.08s;
+}
+.l7 {
+  animation-delay: 1.2s;
+}
+.l8 {
+  animation-delay: 1.32s;
+}
+.l9 {
+  animation-delay: 1.44s;
+}
+.l10 {
+  animation-delay: 1.56s;
+}
+
+@keyframes fade-in-slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes loading-letters {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes message-sent {
+  0% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(75px);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+@keyframes move-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move_in_right_opacity {
+  0% {
+    transform: translateX(75%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

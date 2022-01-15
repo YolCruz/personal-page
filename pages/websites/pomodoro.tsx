@@ -1,4 +1,4 @@
-import { LayoutApps } from "components/layouts";
+import { Website } from "components/layouts";
 import React, { useEffect, useRef, useState } from "react";
 import { clearInterval, setInterval } from "timers";
 
@@ -143,12 +143,13 @@ export default function Pomodoro() {
   };
 
   return (
-    <LayoutApps
+    <Website
       title="Pomodoro App"
       description="Simple time tracker app based on the pomodoro technic"
+      main={false}
     >
-      <div className="grid grid-flow-row xl:grid-flow-col xl:grid-cols-2">
-        <div className="aspect-square w-11/12 bg-sky-200 dark:bg-blue-900 rounded-2xl max-w-3xl mx-auto grid place-items-center duration-300 ease-out">
+      <div className="grid grid-cols-1 min-h-screen pt-20 xl:grid-cols-2 text-white bg-dark-red-main-2 justify-items-center content-center place-items-center">
+        <div className="aspect-square w-11/12 bg-blue-900 rounded-2xl max-w-3xl mx-auto grid place-items-center duration-300 ease-out">
           {/* Outer ring */}
           <div
             className="rounded-full w-11/12 aspect-square grid place-items-center shadow-xl"
@@ -164,7 +165,7 @@ export default function Pomodoro() {
                 // display: "grid"
               }}
             >
-              <div className="w-9/12 h-fit py-8 px-6 max-w-2xl bg-white bg-opacity-90 dark:bg-black dark:bg-opacity-80 rounded-lg border-2 border-rose-800 shadow-lg shadow-rose-800 duration-300 ease-out">
+              <div className="w-9/12 h-fit py-8 px-6 max-w-2xl bg-black bg-opacity-80 rounded-lg border-2 border-rose-800 shadow-lg shadow-rose-800 duration-300 ease-out">
                 <div className="w-fit mb-7">
                   <h1 className="text-2xl">You can take a break now</h1>
                 </div>
@@ -216,7 +217,7 @@ export default function Pomodoro() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-col items-center justify-center gap-6 w-11/12 rounded-full aspect-square bg-cyan-400 dark:bg-gradient-radial dark:from-black-inner dark:to-black-outer shadow-lg">
+            <div className="flex flex-col items-center justify-center gap-6 w-11/12 rounded-full aspect-square bg-gradient-radial from-black-inner to-black-outer shadow-lg">
               <div
                 className="flex-col justify-center items-center"
                 style={{
@@ -295,7 +296,7 @@ export default function Pomodoro() {
             </div>
           </div>
         </div>
-        <div className="w-11/12 max-w-3xl flex flex-col mt-10 gap-4 bg-sky-200 dark:bg-black dark:bg-opacity-70 mx-auto p-6 xl:p-10 rounded-xl text-left font-open-sans duration-300 ease-out">
+        <div className="w-11/12 max-w-3xl flex flex-col mt-10 gap-4 bg-black bg-opacity-70 mx-auto p-6 xl:p-10 rounded-xl text-left font-open-sans duration-300 ease-out text-white">
           <h1 className="text-3xl sm:text-4xl mb-4">
             What I learned doing this proyect:
           </h1>
@@ -305,15 +306,15 @@ export default function Pomodoro() {
           <p className="text-xl sm:text-2xl mb-2">
             While creating the functionality of this application, I learned to
             use React hooks such as{" "}
-            <code className="bg-white dark:bg-gray-700 p-1 rounded-lg">
+            <code className="bg-gray-700 p-1 rounded-lg">
               useState()
             </code>
             ,{" "}
-            <code className="bg-white dark:bg-gray-700 p-1 rounded-lg">
+            <code className="bg-gray-700 p-1 rounded-lg">
               useEffect()
             </code>{" "}
             and{" "}
-            <code className="bg-white dark:bg-gray-700 p-1 rounded-lg">
+            <code className="bg-gray-700 p-1 rounded-lg">
               useRef()
             </code>
             .
@@ -335,6 +336,6 @@ export default function Pomodoro() {
           </p>
         </div>
       </div>
-    </LayoutApps>
+    </Website>
   );
 }
