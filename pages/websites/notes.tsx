@@ -15,7 +15,6 @@ export default function Notes() {
     <Website
       title="Note taking app"
       description="Create and save anything you want"
-      main={false}
     >
       <Header />
       <main className="bg-palet-2 z-10 text-white pt-12 min-h-screen h-fit">
