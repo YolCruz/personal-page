@@ -1,31 +1,18 @@
 import Link from "next/link";
 import Head from "next/head";
-import React, { useEffect, useState } from "react";
-import { updateDocumentClass } from "lib/darkTheme";
+import React from "react";
 import { Icon } from "@iconify/react";
-import Image from "next/image";
 import Header from "components/main/header";
-import Date from "./date";
 
 export function Website({
   children,
   title,
   description,
-  main
 }: {
   children: React.ReactNode;
   title: string;
   description: string;
-  main: boolean
 }) {
-  const [theme, setTheme] = useState("");
-  useEffect(() => {
-    const theme = localStorage.getItem("theme");
-    if (theme) {
-      setTheme(theme);
-    }
-    updateDocumentClass();
-  }, [theme]);
   return (
     <>
       <Head>
@@ -45,13 +32,21 @@ export function Website({
         />
         <meta name="description" content={description} />
       </Head>
-      {main ? <Header enableAnimations={false} /> : <></>}
+      <Header />
       <>{children}</>
-      <div className="pt-6 pl-5 text-2xl bg-dark-red-main-2 text-white">
+      <footer className="py-6 px-5 text-2xl bg-dark-red-main-2 text-white w-screen max-w-full flex items-center justify-center">
         <Link href="/">
-          <a>← Back to home</a>
+          <a className="flex gap-4">
+            <Icon
+              icon="bx:bx-arrow-back"
+              color="white"
+              width="30"
+              height="30"
+            />{" "}
+            Back home
+          </a>
         </Link>
-      </div>
+      </footer>
     </>
   );
 }

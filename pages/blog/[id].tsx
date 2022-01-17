@@ -1,13 +1,19 @@
-import { Website } from "components/layouts";
 import Date from "components/date";
 import { getAllPostsIds, getPostsData } from "lib/blog";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
+import styles from "styles/blog-posts.module.scss";
+import Head from "next/head";
+import Link from "next/link";
+import { Icon } from "@iconify/react";
+import Header from "components/main/header";
+import "highlight.js/styles/pojoaque.css";
 
 interface Props {
   postData: {
     title: string;
     date: string;
     description: string;
+    codeLang: string;
     contentHtml: string;
   };
 }
@@ -29,21 +35,50 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const Websites: NextPage<Props> = ({ postData }) => {
+export default function Websites({ postData }: Props) {
   return (
-    <Website title={postData.title} description={postData.description} main>
-      <article className="w-screen h-screen pt-16 bg-dark-blue text-white flex flex-col gap-10">
-        <h1 className="text-3xl">{postData.title}</h1>
-        <div>
+    <>
+      <Head>
+        <title>{postData.title}</title>
+        <link rel="icon" href="/YC.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Numans&family=Work+Sans&display=swap"
+          rel="stylesheet"
+        />
+        <meta name="description" content={postData.description} />
+      </Head>
+      <Header />
+      <main className="w-screen min-h-screen max-w-full pt-20 pb-10 bg-blue-800 text-white flex flex-col px-1 sm:px-4 md:px-6 lg:px-10">
+        <h1 className="text-3xl mb-4 font-numans">{postData.title}</h1>
+        <div className="font-numans">
           <Date dateString={postData.date} />
         </div>
         <div
-          className="text-justify text-xl"
+          className={`text-justify text-xl max-w-full font-open-sans ${styles.main_content}`}
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
         />
-      </article>
-    </Website>
+      </main>
+      <footer className="py-6 px-5 text-2xl bg-dark-red-main-2 text-white w-screen max-w-full flex items-center justify-center">
+        <Link href="/">
+          <a className="flex gap-4">
+            <Icon
+              icon="bx:bx-arrow-back"
+              color="white"
+              width="30"
+              height="30"
+            />{" "}
+            Back home
+          </a>
+        </Link>
+      </footer>
+    </>
   );
 };
-
-export default Websites;

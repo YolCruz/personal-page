@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { remark } from "remark";
-import html from "remark-html"
+import Markdown from "markdown-it";
+import hljs from "highlight.js";
 
 const postsDirectory = path.join(process.cwd(), "posts/blog");
 
@@ -53,11 +53,20 @@ export async function getPostsData(id: string) {
 
   const matterResult = matter(fileContents);
 
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content)
+  const md = Markdown({
+    highlight: (str: string, lang: string): string => {
+      const code: string =
+        lang && hljs.getLanguage(lang)
+          ? hljs.highlight(str, {
+              language: lang,
+              ignoreIllegals: true,
+            }).value
+          : md.utils.escapeHtml(str);
+          return `<pre class="hljs"><code>${code}</code></pre>`;
+    },
+  });
 
-  const contentHtml = processedContent.toString()
+  const contentHtml = md.render(matterResult.content)
 
   return {
     id,

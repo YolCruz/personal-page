@@ -146,7 +146,6 @@ export default function Pomodoro() {
     <Website
       title="Pomodoro App"
       description="Simple time tracker app based on the pomodoro technic"
-      main={false}
     >
       <div className="grid grid-cols-1 min-h-screen pt-20 xl:grid-cols-2 text-white bg-dark-red-main-2 justify-items-center content-center place-items-center">
         <div className="aspect-square w-11/12 bg-blue-900 rounded-2xl max-w-3xl mx-auto grid place-items-center duration-300 ease-out">
