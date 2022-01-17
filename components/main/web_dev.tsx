@@ -39,7 +39,7 @@ export default function WebDev({ websites }: Props) {
                 </div>
                 <div>
                   <h1 className="relative text-2xl text-blue-400 hover:text-blue-500 active:-top-1 md:text-3xl">
-                    <Link href={`/websites/${title}`}>
+                    <Link href={`/websites/${id}`}>
                       <a>{title}</a>
                     </Link>
                   </h1>

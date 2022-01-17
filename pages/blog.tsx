@@ -24,9 +24,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
 const Blog: NextPage<Props> = ({ allPostsData }) => {
   return (
-    <Website title="Blog" description="My personal blog where I share my experiences and knowledge about coding and web design" main>
+    <Website title="Blog" description="My personal blog where I share my experiences and knowledge about coding and web design">
       <main className="w-screen min-h-screen max-w-full bg-purple-800 pt-16 text-white">
-      <h1 className="text-3xl pt-2 px-2">Blog posts</h1>
+      <h1 className="text-3xl pt-2 px-2 font-kalam">Blog posts</h1>
       <ul className="grid grid-cols-1 justify-items-stretch gap-10 py-6 sm:px-10 md:grid-cols-2 xl:grid-cols-3">
         {allPostsData.map(
           ({

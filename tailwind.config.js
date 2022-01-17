@@ -90,6 +90,7 @@ module.exports = {
         kalam: ["Kalam", "cursive"],
         satisfy: ["Satisfy", "cursive"],
         "dancing-script": ['Dancing Script', "cursive"],
+        "roboto-mono": ["Roboto Mono", "monospace"],
       },
       fontSize: {
         "2.5xl": "1.625rem",

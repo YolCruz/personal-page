@@ -1,13 +1,9 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import animations from "styles/animations.module.scss";
 
-interface Props {
-  enableAnimations: boolean;
-}
 
-export default function Header(props: Props) {
+export default function Header() {
   //* States
   const [translateNav, setTranslateNav] = useState("-translate-x-full");
 
@@ -42,16 +38,11 @@ export default function Header(props: Props) {
   };
   const handleBlur = () => {
     setTranslateNav("-translate-x-full");
-    // setTranslateNav("-translate-x-0");
   };
 
   return (
     <header
-      className={`bg-dark-blue-main-3 fixed z-20 inset-x-0 top-0 h-16 max-w-full transition-transform duration-200 flex justify-start ${
-        animations.durations
-      } ${props.enableAnimations ? animations.move_nav : ""} ${
-        props.enableAnimations ? "-translate-y-full" : ""
-      }`}
+      className={`bg-dark-blue-main-3 fixed z-20 inset-x-0 top-0 h-16 max-w-full transition-transform duration-200 border-b border-white flex justify-start`}
     >
       <button
         className={`aspect-square w-10 bg-hamburger-white bg-center bg-no-repeat my-auto ml-2 md:hidden`}
@@ -60,7 +51,7 @@ export default function Header(props: Props) {
         <span className="sr-only">Menu</span>
       </button>
       <nav
-        className={`fixed z-50 h-super-big overflow-y-hidden inset-y-0 left-0 right-2/10 bg-dark-blue-main-3 text-white font-kalam text-3xl flex flex-col gap-12 pt-10 px-5 transition-transform duration-300 ${translateNav} md:h-16 md:top-0 md:bottom-2/4 md:inset-x-0 md:translate-x-0 md:flex-row md:py-3 md:text-xl lg:text-3xl`}
+        className={`fixed z-50 h-super-big overflow-y-hidden inset-y-0 left-0 right-2/10 bg-dark-blue-main-3 text-white border-b border-white font-kalam text-3xl flex flex-col gap-12 pt-10 px-5 transition-transform duration-300 ${translateNav} md:h-16 md:top-0 md:bottom-2/4 md:inset-x-0 md:translate-x-0 md:flex-row md:py-3 md:text-xl lg:text-3xl`}
         ref={navEl}
         onBlur={handleBlur}
         onFocus={handleFocus}

@@ -58,7 +58,6 @@ const Contact: NextPage = () => {
     <Website
       title="Contact"
       description="Here you can find my socials and you can even sent me an email from here"
-      main
     >
       <div
         className={`fixed inset-0 bg-black z-10 py-16 bg-opacity-50 place-items-center max-w-full ${displayMessageSent} ${animations.durations} opacity-0 ${anim}`}
