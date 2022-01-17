@@ -35,7 +35,7 @@ export default function MainPage({websites, posts}: Props) {
   return (
     <>
       {/* <WelcomeAnimation /> */}
-      <Header enableAnimations={false}/>
+      <Header />
       <main
         className={`max-h-screen overflow-y-auto overflow-x-hidden bg-dark-blue-main-2 w-screen max-w-full flex flex-col gap-6 text-white overscroll-contain pt-16 md:px-16 md:gap-4`}
       >

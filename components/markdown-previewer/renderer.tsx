@@ -14,7 +14,7 @@ export default function Renderer({ text }: Props) {
     setParsed(() => {
       return DOMPurify.sanitize(md.render(text));
     });
-  }, [text]);
+  }, [text, md]);
   return (
     <div className="bg-white p-4 border-2 border-black rounded-lg shadow-md">
       <div className={`${styles.renderer}`} dangerouslySetInnerHTML={{ __html: parsed }} />
