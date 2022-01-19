@@ -1,70 +1,68 @@
-.durations {
-  --welcome-duration: 500ms;
-  --welcome-delay: 300ms;
+$welcome-duration: 500ms;
+$welcome-delay: 300ms;
 
-  --text-duration: 500ms;
-  --text-delay: calc(var(--welcome-duration) + var(--welcome-delay) + 200ms);
+$text-duration: 500ms;
+$text-delay: calc($welcome-duration + $welcome-delay + 200ms);
 
-  --move-div-duration: 800ms;
-  --move-div-delay: calc(var(--text-duration) + var(--text-delay) + 800ms);
+$move-div-duration: 800ms;
+$move-div-delay: calc($text-duration + $text-delay + 800ms);
 
-  --nav-duration: 300ms;
-  --nav-delay: calc(var(--move-div-duration) + var(--move-div-delay));
+$nav-duration: 300ms;
+$nav-delay: calc($move-div-duration + $move-div-delay);
 
-  --name-duration: 300ms;
-  --name-delay: calc(var(--nav-delay) + var(--nav-duration) + 100ms);
+$name-duration: 300ms;
+$name-delay: calc($nav-delay + $nav-duration + 100ms);
 
-  --main-card-duration: 300ms;
-  --main-card-delay: calc(var(--name-delay) + var(--name-duration) + 100ms);
+$main-card-duration: 300ms;
+$main-card-delay: calc($name-delay + $name-duration + 100ms);
 
-  --message-sent-duration: 200ms;
-  --message-sent-div-duration: 2000ms;
-}
+$message-sent-duration: 200ms;
+$message-sent-div-duration: 2000ms;
 
 .welcome {
   animation-name: fade-in-slide-down;
-  animation-duration: var(--welcome-duration);
-  animation-delay: var(--welcome-delay);
+  animation-duration: $welcome-duration;
+  animation-delay: $welcome-delay;
   animation-fill-mode: forwards;
 }
 
 .text {
   animation-name: fade-in-slide-down;
-  animation-duration: var(--text-duration);
-  animation-delay: var(--text-delay);
+  animation-duration: $text-duration;
+  animation-delay: $text-delay;
   animation-fill-mode: forwards;
 }
 
 .move_div {
   animation-name: slide-left;
-  animation-duration: var(--move-div-duration);
-  animation-delay: var(--move-div-delay);
+  animation-duration: $move-div-duration;
+  animation-delay: $move-div-delay;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .move_nav {
   animation-name: slide-down;
-  animation-duration: var(--nav-duration);
-  animation-delay: var(--nav-delay);
+  animation-duration: $nav-duration;
+  animation-delay: $nav-delay;
   animation-fill-mode: forwards;
 }
 .move_nav_before {
   animation-name: slide-up;
-  animation-duration: var(--nav-duration);
-  animation-delay: var(--nav-delay);
+  animation-duration: $nav-duration;
+  animation-delay: $nav-delay;
   animation-fill-mode: forwards;
 }
 .name {
   animation-name: fade-in-slide-down;
-  animation-duration: var(--name-duration);
-  animation-delay: var(--name-delay);
+  animation-duration: $name-duration;
+  animation-delay: $name-delay;
   animation-fill-mode: forwards;
 }
 .move_main_card {
   animation-name: fade-in-slide-up;
-  animation-duration: var(--main-card-duration);
-  animation-delay: var(--main-card-delay);
+  animation-duration: $main-card-duration;
+  animation-delay: $main-card-delay;
   animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   animation-fill-mode: forwards;
 }
@@ -76,7 +74,7 @@
 
 .message_sent {
   animation-name: message-sent;
-  animation-duration: var(--message-sent-div-duration);
+  animation-duration: $message-sent-div-duration;
   animation-fill-mode: forwards;
 }
 

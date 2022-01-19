@@ -1,7 +1,7 @@
 import Date from "components/date";
 import { getAllPostsIds, getPostsData } from "lib/blog";
 import { GetStaticProps, GetStaticPaths, NextPage } from "next";
-import styles from "styles/blog-posts.module.scss";
+import styles from "styles/websites/blog-posts.module.scss";
 import Head from "next/head";
 import Link from "next/link";
 import { Icon } from "@iconify/react";

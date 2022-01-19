@@ -1,7 +1,7 @@
 import DOMPurify from "isomorphic-dompurify";
 import Mardown from "markdown-it";
 import { useEffect, useState } from "react";
-import styles from "styles/markdown-previewer.module.scss"
+import styles from "styles/websites/markdown-previewer.module.scss"
 
 interface Props {
   text: string;

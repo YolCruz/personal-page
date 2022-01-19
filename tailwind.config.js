@@ -31,6 +31,7 @@ module.exports = {
         "dark-green-main-1": "#0A5F5F",
         "dark-purple-main-1": "#321d49",
         "dark-purple-main-2": "#281036",
+        "dark-purple-3": "#66567c",
         "dark-red-main-1": "#3d1d23",
         "dark-red-main-2": "#361010",
         "dark-green-main-1": "#0b4626",
@@ -44,6 +45,7 @@ module.exports = {
         "notes-palet-2": "#4C483D",
         "notes-palet-3": "#FDF0CA",
         "notes-palet-4": "#00C9AB",
+        "calculator-palet-1": "#36294B",
       },
       screens: {
         "md-min-max": { min: "640px", max: "867px" },
