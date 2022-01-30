@@ -49,10 +49,6 @@ export default function Websites({ postData }: Props) {
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Numans&family=Work+Sans&display=swap"
-          rel="stylesheet"
-        />
         <meta name="description" content={postData.description} />
       </Head>
       <Header />

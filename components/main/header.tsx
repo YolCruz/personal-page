@@ -1,11 +1,14 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-
+import { useSpring, animated } from "react-spring";
 
 export default function Header() {
+  const props = useSpring({ to: { opacity: 1 }, from: { opacity: 0 } });
+
   //* States
   const [translateNav, setTranslateNav] = useState("-translate-x-full");
+  const [scrollY, setScrollY] = useState(0);
 
   //* Refs
   const navEl = useRef<HTMLDivElement>(null);
@@ -14,7 +17,6 @@ export default function Header() {
   // useEffect(() => {
   //   window.onscroll = function () {
   //     if (translateNav === "-translate-x-0") {
-  //       setNavIcon("bg-hamburger-white");
   //       setTranslateNav("-translate-x-full");
   //     }
   //     const currentScrollY = window.scrollY;
@@ -23,9 +25,9 @@ export default function Header() {
   //     } else {
   //       setTranslateHeader("-translate-y-full");
   //     }
-  //     setscrollY(currentScrollY);
+  //     setScrollY(currentScrollY);
   //   };
-  // }, [scrollY]);
+  // }, [scrollY, setTranslateNav, translateNav]);
 
   //* Handlers
   const navToggle = () => {
@@ -41,8 +43,8 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`bg-dark-blue-main-3 fixed z-20 inset-x-0 top-0 h-16 max-w-full transition-transform duration-200 border-b border-white flex justify-start`}
+    <div
+      className={`bg-black fixed z-20 inset-x-0 top-0 h-16 max-w-full transition-transform duration-200 flex justify-start`}
     >
       <button
         className={`aspect-square w-10 bg-hamburger-white bg-center bg-no-repeat my-auto ml-2 md:hidden`}
@@ -51,71 +53,32 @@ export default function Header() {
         <span className="sr-only">Menu</span>
       </button>
       <nav
-        className={`fixed z-50 h-super-big overflow-y-hidden inset-y-0 left-0 right-2/10 bg-dark-blue-main-3 text-white border-b border-white font-kalam text-3xl flex flex-col gap-12 pt-10 px-5 transition-transform duration-300 ${translateNav} md:h-16 md:top-0 md:bottom-2/4 md:inset-x-0 md:translate-x-0 md:flex-row md:py-3 md:text-xl lg:text-3xl`}
+        id="navbar"
+        className={`fixed z-50 h-super-big overflow-y-hidden inset-y-0 left-0 right-2/10 bg-dark-blue-main-3 text-white text-3xl flex flex-col gap-12 pt-10 px-5 transition-transform duration-300 ${translateNav} md:h-16 md:top-0 md:bottom-2/4 md:inset-x-0 md:translate-x-0 md:flex-row md:py-3 md:text-xl lg:text-3xl`}
         ref={navEl}
         onBlur={handleBlur}
         onFocus={handleFocus}
         tabIndex={-1}
       >
-        <h1 className="font-dancing-script text-4.5xl text-center">YC</h1>
-        <ul className="flex flex-col gap-8 md:flex-row md:gap-8 xl:gap-20">
-        <li className="flex gap-3 items-center">
-            <Icon
-              aria-hidden="true"
-              icon="ant-design:home-outlined"
-              width={40}
-              height={40}
-            />
+        <h1 className="font-roboto-slab text-4.5xl text-center">YC</h1>
+        <div className="flex flex-col gap-8 md:flex-row md:gap-8 xl:gap-20 font-roboto-slab">
             <Link href="/">
               <a>Home</a>
             </Link>
-          </li>
-          <li className="flex gap-3 items-center">
-            <Icon
-              aria-hidden="true"
-              icon="ic:outline-web"
-              width={40}
-              height={40}
-            />
             <Link href="/websites">
               <a>Portfolio</a>
             </Link>
-          </li>
-          <li className="flex gap-3 items-center">
-            <Icon
-              aria-hidden="true"
-              icon="icon-park-outline:notebook-one"
-              width={40}
-              height={40}
-            />
             <Link href="/blog">
               <a>Blog</a>
             </Link>
-          </li>
-          <li className="flex gap-3 items-center">
-            <Icon
-              aria-hidden="true"
-              icon="fluent:contact-card-20-regular"
-              width={40}
-              height={40}
-            />
             <Link href="/contact">
               <a>Contact</a>
             </Link>
-          </li>
-          <li className="flex gap-3 items-center">
-            <Icon
-              aria-hidden="true"
-              icon="bi:info-circle"
-              width={40}
-              height={40}
-            />
             <Link href="/about">
               <a>About</a>
             </Link>
-          </li>
-        </ul>
+        </div>
       </nav>
-    </header>
+    </div>
   );
 }

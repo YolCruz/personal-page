@@ -1,9 +1,6 @@
-import styles from "styles/main.module.scss";
-import animations from "styles/animations.module.scss";
 import Image from "next/image";
 import { parseISO, format } from "date-fns";
 import Link from "next/link";
-import { useEffect } from "react";
 
 interface Props {
   websites: {
@@ -20,9 +17,10 @@ interface Props {
 export default function WebDev({ websites }: Props) {
   return (
     <section
-      className={`min-h-fit flex flex-col gap-6 bg-blue-main-1 bg-opacity-60 rounded-t-md  md:max-w-3xl lg:max-w-5xl xl:max-w-7xl md:mx-auto md:mb-4`}
+      id="projects"
+      className={`min-h-fit flex flex-col gap-6 bg-blue-700 bg-opacity-90 rounded-b-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl md:mx-auto md:mb-4`}
     >
-      <h1 className="font-kalam bg-black-back-2 pl-2 py-2 text-3xl sticky top-0 rounded-t-md z-10 sm:text-4xl md:text-5xl">
+      <h1 className="font-kalam bg-black-back-2 pl-2 py-2 text-3xl sticky top-0 z-10 sm:text-4xl md:text-5xl">
         Web developer
       </h1>
       <ul className="grid grid-cols-1 gap-3 mx-3 sm:grid-cols-2 md:mx-8 lg:grid-cols-3 xl:grid-cols-4">
@@ -32,7 +30,7 @@ export default function WebDev({ websites }: Props) {
             return (
               <li
                 key={id}
-                className="bg-dark-blue-main-1 px-4 py-6 flex flex-col gap-4 rounded-2xl sm:px-6"
+                className="project-tile bg-dark-blue-main-1 px-4 py-6 flex flex-col gap-4 rounded-2xl sm:px-6"
               >
                 <div className="self-center hidden md:block">
                   <Image src={picture} width={200} height={200} alt={alt} />

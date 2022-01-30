@@ -1,38 +1,15 @@
 import { Website } from "components/layouts";
+import UserInput from "components/calculator/user-input";
+import Buttons from "components/calculator/buttons";
+import Historial from "components/calculator/history";
 import React, { useState } from "react";
 import { parser } from "mathjs";
 import styles from "styles/websites/calculator.module.scss";
 
-interface History {
+export interface History {
   historyInput: string;
   historyValue: string;
 }
-
-const buttons = [
-  { id: "parentheses1", text: "(", fun: "(" },
-  { id: "parentheses2", text: ")", fun: ")" },
-  { id: "plus", text: "+", fun: "+" },
-  { id: "minus", text: "-", fun: "-" },
-  { id: "multiplication", text: "*", fun: "*" },
-  { id: "division", text: "/", fun: "/" },
-  { id: "point", text: ".", fun: "." },
-  { id: "power2", text: "x²", fun: "^2" },
-  { id: "factorial", text: "x!", fun: "!" },
-  { id: "DEL", text: "DEL", fun: "" },
-  { id: "AC", text: "AC", fun: "" },
-  { id: "sqrt", text: "√x", fun: "sqrt(" },
-  { id: "equal", text: "=", fun: "=" },
-  { id: "number0", text: "0", fun: "0" },
-  { id: "number1", text: "1", fun: "1" },
-  { id: "number2", text: "2", fun: "2" },
-  { id: "number3", text: "3", fun: "3" },
-  { id: "number4", text: "4", fun: "4" },
-  { id: "number5", text: "5", fun: "5" },
-  { id: "number6", text: "6", fun: "6" },
-  { id: "number7", text: "7", fun: "7" },
-  { id: "number8", text: "8", fun: "8" },
-  { id: "number9", text: "9", fun: "9" },
-];
 const parserUser = parser();
 
 export default function Calculator() {
@@ -100,98 +77,19 @@ export default function Calculator() {
       <div
         className={`w-screen max-w-full min-h-screen max-h-screen pt-16 bg-violet-900 px-1 shadow-2xl ${styles.container} sm:px-20 sm:pt-20 sm:pb-6 md:px-32 md:pt-24 md:pb-10 lg:px-40 xl:px-60`}
       >
-        <div
-          className={`rounded-md font-roboto-mono bg-dark-purple-3 text-white flex flex-col-reverse overflow-y-auto overscroll-contain gap-1 max-h-full ${styles.historial}`}
-        >
-          {history.map((entry) => {
-            return (
-              <div
-                key={`${entry.historyInput}__${entry.historyValue}`}
-                className={`flex justify-between mt-1 overflow-x-auto px-2 ${styles.operation}`}
-              >
-                <p className="text-lg overflow-x-auto">{entry.historyInput}</p>
-                <p className="text-lg overflow-x-auto">{entry.historyValue}</p>
-              </div>
-            );
-          })}
-        </div>
-        <div
-          className={`bg-violet-200 rounded-md font-roboto-mono ${styles.user_input} flex flex-col justify-between`}
-        >
-          <input
-            type="text"
-            value={userInput}
-            className="bg-violet-200 text-right w-full px-3 py-1 text-2xl rounded-md active:outline-none focus:outline-none"
-            onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setUserInput(e.target.value)
-            }
-            onKeyDown={handleKey}
-            maxLength={20}
-          />
-          <p className="bg-violet-200 text-right break-words px-1 py-1 text-xl h-fit rounded-md">
-            {error}
-          </p>
-        </div>
-        <div
-          className={`${styles.calc_buttons} text-white flex gap-1 font-roboto-mono border rounded-md`}
-        >
-          {buttons.map((button) => {
-            switch (button.text) {
-              case "=":
-                return (
-                  <button
-                    style={{
-                      gridArea: `${button.id}`,
-                    }}
-                    key={button.id}
-                    className="border text-xl sm:text-2xl md:text-3xl"
-                    onClick={getResult}
-                  >
-                    {button.text}
-                  </button>
-                );
-              case "AC":
-                return (
-                  <button
-                    style={{
-                      gridArea: `${button.id}`,
-                    }}
-                    onClick={ac}
-                    key={button.id}
-                    className="border text-xl sm:text-2xl md:text-3xl"
-                  >
-                    {button.text}
-                  </button>
-                );
-              case "DEL":
-                return (
-                  <button
-                    style={{
-                      gridArea: `${button.id}`,
-                    }}
-                    onClick={del}
-                    key={button.id}
-                    className="border text-xl sm:text-2xl md:text-3xl"
-                  >
-                    {button.text}
-                  </button>
-                );
-              default:
-                return (
-                  <button
-                    style={{
-                      gridArea: `${button.id}`,
-                    }}
-                    key={button.id}
-                    className="border text-xl sm:text-2xl md:text-3xl"
-                    onClick={() => setUserInput((prev) => prev + button.fun)}
-                  >
-                    {button.text}
-                  </button>
-                );
-            }
-          })}
-        </div>
+        <Historial history={history} />
+        <UserInput
+          error={error}
+          userInput={userInput}
+          setUserInput={setUserInput}
+          handleKey={handleKey}
+        />
+        <Buttons
+          getResult={getResult}
+          ac={ac}
+          del={del}
+          setUserInput={setUserInput}
+        />
       </div>
     </Website>
   );

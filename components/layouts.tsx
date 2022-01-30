@@ -2,39 +2,35 @@ import Link from "next/link";
 import Head from "next/head";
 import React from "react";
 import { Icon } from "@iconify/react";
-import Header from "components/main/header";
 
 export function Website({
   children,
   title,
   description,
+  icon,
 }: {
   children: React.ReactNode;
   title: string;
-  description: string;
+  description?: string;
+  icon?: string;
 }) {
   return (
     <>
       <Head>
         <title>{title}</title>
-        <link rel="icon" href="/YC.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Numans&family=Work+Sans&display=swap"
-          rel="stylesheet"
-        />
-        <meta name="description" content={description} />
+        {icon ? (
+          <link rel="icon" href={icon} />
+        ) : (
+          <link rel="icon" href="/YC.svg" />
+        )}
+        {description ? (
+          <meta name="description" content={description} />
+        ) : (
+          <></>
+        )}
       </Head>
-      <Header />
       <>{children}</>
-      <footer className="py-6 px-5 text-2xl bg-dark-red-main-2 text-white w-screen max-w-full flex items-center justify-center">
+      <footer className="py-6 px-5 text-2xl bg-red-900 text-white w-screen max-w-full flex items-center justify-center">
         <Link href="/">
           <a className="flex gap-4">
             <Icon

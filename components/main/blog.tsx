@@ -29,9 +29,9 @@ export default function Blog({ posts }: Props) {
   return (
     <section
       ref={ref}
-      className={`min-h-fit flex flex-col gap-6 bg-purple-main-1 bg-opacity-60 rounded-t-md opacity-0 ${animations.durations} ${anim} md:max-w-3xl lg:max-w-5xl xl:max-w-7xl md:mx-auto md:mb-4`}
+      className={`min-h-fit flex flex-col gap-6 bg-purple-700 bg-opacity-90 rounded-b-2xl opacity-0 ${animations.durations} ${anim} md:max-w-3xl lg:max-w-5xl xl:max-w-7xl md:mx-auto md:mb-4`}
     >
-      <h1 className="font-kalam bg-dark-purple-main-1 pl-2 py-2 text-3xl z-10 sticky top-0 rounded-t-md sm:text-4xl md:text-5xl">
+      <h1 className="font-kalam bg-dark-purple-main-1 pl-2 py-2 text-3xl z-10 sticky top-0  sm:text-4xl md:text-5xl">
         Blog
       </h1>
       <ul className="grid grid-cols-1 gap-3 m-3 sm:grid-cols-2 md:mx-8 lg:grid-cols-3 xl:grid-cols-4">

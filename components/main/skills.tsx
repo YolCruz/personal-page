@@ -2,7 +2,6 @@ import { Rating } from "components/layouts";
 import animations from "styles/animations.module.scss";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import Link from "next/link";
 
 export default function Skills() {
   const [anim, setAnim] = useState("");
@@ -20,9 +19,9 @@ export default function Skills() {
   return (
     <section
       ref={ref}
-      className={`min-h-fit flex flex-col gap-6 bg-red-main-1 bg-opacity-60 rounded-t-md opacity-0 ${animations.durations} ${anim} md:max-w-3xl lg:max-w-5xl xl:max-w-7xl md:mx-auto md:mb-4`}
+      className={`min-h-fit flex flex-col gap-6 bg-red-700 bg-opacity-90 pb-4 opacity-0 ${anim} md:max-w-3xl rounded-b-2xl lg:max-w-5xl xl:max-w-7xl md:mx-auto md:mb-4`}
     >
-      <h1 className="font-kalam bg-dark-red-main-1 pl-2 py-2 text-3xl sticky top-0 rounded-t-md z-10 sm:text-4xl md:text-5xl">
+      <h1 className="font-kalam bg-dark-red-main-1 pl-2 py-2 text-3xl sticky top-0  z-10 sm:text-4xl md:text-5xl">
         Skills
       </h1>
       <div className="flex flex-col gap-3 my-3 bg-dark-red-main-2 h-fit px-3 pb-4 rounded-md font-kalam md:mx-8">
@@ -77,6 +76,7 @@ export default function Skills() {
               I&apos;ve wrote some code in these languages. Check out my 👉
               <a
                 target="_blank"
+                id="profile-link"
                 rel="noopener noreferrer"
                 href="https://github.com/YolCruz"
                 className="relative underline decoration-red-500 decoration-2 underline-offset-1 text-blue-400 visited:text-purple-400 hover:text-blue-500 active:-top-1"
