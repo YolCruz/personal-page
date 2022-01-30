@@ -9,6 +9,7 @@ export default function Editor({ text, handleUpdate }: Props) {
   return (
     <div className="flex justify-center items-center">
       <textarea
+        id="editor"
         className="px-2 py-1 border-4 rounded-lg border-black shadow-xl focus:outline-none"
         rows={15}
         cols={100}

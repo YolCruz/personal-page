@@ -1,5 +1,6 @@
 import DOMPurify from "isomorphic-dompurify";
-import Mardown from "markdown-it";
+import Markdown from "markdown-it";
+import hljs from "highlight.js";
 import { useEffect, useState } from "react";
 import styles from "styles/websites/markdown-previewer.module.scss"
 
@@ -8,7 +9,18 @@ interface Props {
 }
 
 export default function Renderer({ text }: Props) {
-  const md = Mardown();
+  const md = Markdown({
+    highlight: (str: string, lang: string): string => {
+      const code: string =
+        lang && hljs.getLanguage(lang)
+          ? hljs.highlight(str, {
+              language: lang,
+              ignoreIllegals: true,
+            }).value
+          : md.utils.escapeHtml(str);
+          return `<pre class="hljs"><code>${code}</code></pre>`;
+    },
+  });
   const [parsed, setParsed] = useState(DOMPurify.sanitize(md.render(text)));
   useEffect(() => {
     setParsed(() => {
@@ -17,7 +29,7 @@ export default function Renderer({ text }: Props) {
   }, [text, md]);
   return (
     <div className="bg-white p-4 border-2 border-black rounded-lg shadow-md">
-      <div className={`${styles.renderer}`} dangerouslySetInnerHTML={{ __html: parsed }} />
+      <div id="preview" className={`${styles.renderer}`} dangerouslySetInnerHTML={{ __html: parsed }} />
     </div>
   );
 }
