@@ -14,26 +14,26 @@ interface Props {
     picture: string;
     alt: string;
   }[];
-  allPostsData: {
-    title: string;
-    date: string;
-    summary: string;
-    id: string;
-  }[];
+  // allPostsData: {
+  //   title: string;
+  //   date: string;
+  //   summary: string;
+  //   id: string;
+  // }[];
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const allWebsitesData = getSortedWebsitesData();
-  const allPostsData = getSortedPostsData();
+  // const allPostsData = getSortedPostsData();
   return {
     props: {
       allWebsitesData,
-      allPostsData,
+      // allPostsData,
     },
   };
 };
 
-const Home: NextPage<Props> = ({ allWebsitesData, allPostsData }) => {
+const Home: NextPage<Props> = ({ allWebsitesData }) => {
   return (
     <>
       <Head>
@@ -43,7 +43,7 @@ const Home: NextPage<Props> = ({ allWebsitesData, allPostsData }) => {
           content="Personal website of Yoltic Cruz Tello"
         />
       </Head>
-      <MainPage websites={allWebsitesData} posts={allPostsData} />
+      <MainPage websites={allWebsitesData} />
     </>
   );
 };

@@ -1,7 +1,8 @@
-import WebDev from "./web_dev";
-import Blog from "./blog";
-import Skills from "./skills";
 import About from "./about";
+import styles from "styles/main.module.scss";
+import Welcome from "./welcome";
+import PortfolioMobile from "./portfolio_mobile";
+import Header from "./header"
 
 interface Props {
   websites: {
@@ -11,29 +12,20 @@ interface Props {
     description: string;
     descriptionLong: string;
     picture: string;
-    alt: string
+    alt: string;
   }[];
-  posts: {
-    title: string;
-    date: string;
-    summary: string;
-    id: string;
-  }[]
 }
 
-export default function MainPage({websites, posts}: Props) {
-
+export default function MainPage({ websites }: Props) {
   return (
     <>
-      {/* <WelcomeAnimation /> */}
-      <main
-        className={`max-h-screen overflow-y-auto overflow-x-hidden bg-white w-screen max-w-full flex flex-col gap-6 text-white overscroll-contain pt-16 md:px-16 md:gap-4`}
-      >
-          <WebDev websites={websites}/>
-          <Blog posts={posts} />
-          <Skills />
-          <About />
-      </main>
+      <div
+        className={`fixed inset-0 -z-50 ${styles.backImage} bg-blue-1 bg-no-repeat bg-auto bg-right-bottom overflow-hidden`}
+      />
+      <Header />
+      <Welcome />
+      <About />
+      <PortfolioMobile />
     </>
   );
 }

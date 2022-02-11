@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
+import styles from "styles/layouts.module.scss";
 
 export function Website({
   children,
@@ -47,82 +49,46 @@ export function Website({
   );
 }
 
-export function Rating({ skill, rating }: { skill: string; rating: number }) {
-  const ratingStars = () => {
-    let stars: JSX.Element[] = [];
-    for (let i = 1; i <= 5; i++) {
-      if (rating - i >= 0) {
-        stars.push(
-          <Icon
-            icon="bi:star-fill"
-            color="#faff00"
-            width="25"
-            height="25"
-            key={`${skill}${i}`}
-          />
-        );
-      } else if (rating - i === -0.5) {
-        stars.push(
-          <Icon
-            icon="bi:star-half"
-            color="#faff00"
-            width="25"
-            height="25"
-            key={`${skill}${i}`}
-          />
-        );
-      } else {
-        stars.push(
-          <Icon
-            icon="bi:star"
-            color="#faff00"
-            width="25"
-            height="25"
-            key={`${skill}${i}`}
-          />
-        );
-      }
-    }
-    return stars;
-  };
+export function AppDescriptionMobile({
+  name,
+  description,
+  conceptsUsed,
+  image,
+  w,
+  h,
+  link,
+  alt,
+}: {
+  name: string;
+  description: string;
+  conceptsUsed: string[];
+  image: string;
+  w: number;
+  h: number;
+  link: string;
+  alt: string;
+}) {
   return (
-    <div className="flex bg-red-main-2 bg-opacity-40 items-center py-2 px-3 justify-between rounded-md">
-      <p className="text-lg">{skill}</p>
-      <div className="flex gap-3">{ratingStars()}</div>
+    <div>
+      <h1 className="text-green-1 font-raleway font-bold text-2xl text-center">
+        {name}
+      </h1>
+      <div className="w-7/12 max-w-xs mx-auto mt-2">
+        <Image src={image} width={w} height={h} alt={alt} />
+      </div>
+      <div className="font-raleway flex flex-col items-center gap-3 mx-1">
+        <p className="text-white text-center text-lg">{description}</p>
+        <p className="text-green-1 text-center text-lg font-medium">
+          {conceptsUsed.map((el) => {
+            return <>{el} • </>;
+          })}
+        </p>
+        <Link href={link}>
+          <a className="py-2 px-16 border-2 rounded-full text-white text-lg border-yellow-1 bg-gradient-to-b from-blue-3">
+            Check it out
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
-
-// export function LayoutCardsImage({ children }: { children: React.ReactNode }) {
-//   return (
-//     <div className="aspect-square w-64 sm:w-72 bg-primary dark:bg-secondary rounded-lg opacity-100 self-center justify-self-center hidden sm:grid place-content-center">
-//       {children}
-//     </div>
-//   );
-// }
-
-// export function LayoutCardsContent({
-//   url,
-//   title,
-//   desc,
-//   date,
-// }: {
-//   url: string;
-//   title: string;
-//   desc: string;
-//   date: string;
-// }) {
-//   return (
-//     <div className="font-open-sans">
-//       <Link href={url}>
-//         <a className="relative text-2xl text-blue-500 hover:text-blue-400 active:bottom-1 underline underline-offset-2 decoration-blue-300">
-//           {title}
-//         </a>
-//       </Link>
-//       <p className="text-lg">{desc}</p>
-//       <p className="text-right text-md">
-//         Date finished: <span className="text-red-500 font-bold">{date}</span>
-//       </p>
-//     </div>
-//   );
-// }
