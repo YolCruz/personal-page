@@ -1,31 +1,21 @@
 import About from "./about";
 import styles from "styles/main.module.scss";
 import Welcome from "./welcome";
-import PortfolioMobile from "./portfolio_mobile";
-import Header from "./header"
+import Portfolio from "./portfolio";
+import Header from "./header";
 
-interface Props {
-  websites: {
-    date: string;
-    title: string;
-    id: string;
-    description: string;
-    descriptionLong: string;
-    picture: string;
-    alt: string;
-  }[];
-}
-
-export default function MainPage({ websites }: Props) {
+export default function MainPage() {
   return (
     <>
       <div
-        className={`fixed inset-0 -z-50 ${styles.backImage} bg-blue-1 bg-no-repeat bg-auto bg-right-bottom overflow-hidden`}
+        className={`fixed inset-0 -z-50 ${styles.backImage} bg-blue-1 bg-no-repeat bg-cover bg-right-bottom overflow-hidden`}
       />
-      <Header />
-      <Welcome />
-      <About />
-      <PortfolioMobile />
+      <div className="w-screen h-screen relative max-h-screen max-w-full overflow-y-auto scroll-smooth overscroll-contain">
+        <Header />
+        <Welcome />
+        <About />
+        <Portfolio />
+      </div>
     </>
   );
 }

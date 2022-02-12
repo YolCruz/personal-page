@@ -59,24 +59,6 @@ const Contact: NextPage = () => {
       title="Contact"
       description="Here you can find my socials and you can even sent me an email from here"
     >
-      <div
-        className={`fixed inset-0 bg-black z-10 py-16 bg-opacity-50 place-items-center max-w-full ${displayMessageSent} ${animations.durations} opacity-0 ${anim}`}
-      >
-        <div className="w-screen h-fit text-white">
-          <h1 className="text-center text-3xl bg-blue-500 py-6 mx-10">
-            Message send!
-          </h1>
-        </div>
-      </div>
-      <div
-        className={`fixed inset-0 bg-black z-10 py-16 bg-opacity-50 place-items-center max-w-full ${displayMessageError} ${animations.durations} opacity-0 ${anim}`}
-      >
-        <div className="w-screen h-fit text-white">
-          <h1 className="text-center text-3xl bg-red-600 py-6 mx-10">
-            Something went wrong
-          </h1>
-        </div>
-      </div>
       <main className="w-screen min-h-screen max-w-full bg-slate-700 pt-16 text-white font-open-sans">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>

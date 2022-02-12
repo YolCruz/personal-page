@@ -23,7 +23,8 @@
     "react-spring": "^9.4.2",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "sass": "^1.45.1"
+    "sass": "^1.45.1",
+    "typed.js": "^2.0.12"
   },
   "devDependencies": {
     "@iconify/react": "^3.1.0",

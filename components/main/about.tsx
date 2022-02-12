@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Typed from "typed.js";
 import animations from "styles/animations.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 export default function About() {
@@ -10,13 +11,44 @@ export default function About() {
     triggerOnce: true,
   });
 
+  const el = useRef(null);
+  const typed = useRef<Typed | null>(null);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        "solving code challenges",
+        "building web applications",
+        "playing video games",
+        "learning new things",
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+      shuffle: true,
+      backDelay: 1250,
+    };
+
+    if (el.current) {
+      typed.current = new Typed(el.current, options);
+    }
+
+    return () => {
+      if (typed.current) typed.current.destroy();
+    };
+  }, []);
+
   useEffect(() => {
     if (inView) {
       setAnim(animations.move_card);
     }
   }, [inView]);
+
   return (
-    <div className={`min-h-screen w-screen max-w-full flex items-center`}>
+    <div
+      id="about"
+      className={`min-h-screen w-screen max-w-full flex items-center justify-center`}
+    >
       <main
         ref={ref}
         className={`${anim} opacity-0 h-fit bg-black-1 bg-opacity-75 py-5 px-5 flex flex-col gap-12`}
@@ -33,7 +65,9 @@ export default function About() {
           </div>
           <div className="font-rubik text-3xl flex flex-col gap-2">
             <p className="text-white text-center">I am Yoltic and I enjoy</p>
-            <p className="text-green-1 text-center">solving code challenges</p>
+            <div className="h-8 min-h-fit flex">
+              <p className="text-green-1 text-center" ref={el} />
+            </div>
           </div>
         </div>
         <div className="font-rubik text-white text-lg flex flex-col gap-5">
