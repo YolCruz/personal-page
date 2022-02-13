@@ -11,7 +11,7 @@ export default function Desktop() {
           image="/pomodoro_desktop.png"
           w={1260}
           h={737}
-          link="/websites/pomodoro"
+          link="/page/pomodoro"
           alt="How the pomodoro app looks"
         />
         <AppDescriptionDesktop
@@ -21,7 +21,7 @@ export default function Desktop() {
           image="/calculator_desktop.png"
           w={1260}
           h={737}
-          link="/websites/calculator"
+          link="/page/calculator"
           alt="How the calculator app looks"
         />
     </div>

@@ -18,7 +18,7 @@ export default function Welcome() {
   }, [inView]);
 
   return (
-    <div className="w-screen max-w-full min-h-screen font-audiowide text-3xl text-center grid grid-cols-1 place-content-center relative ">
+    <div className="w-screen max-w-full min-h-screen font-audiowide text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center grid grid-cols-1 place-content-center relative ">
       <div ref={ref} className="flex flex-col">
         <p className="-tracking-[.08em] text-white">YOLTIC CRUZ TELLO</p>
         <p className="-tracking-[.01em] text-green-1">WEB DEVELOPER</p>

@@ -51,7 +51,7 @@ export default function About() {
     >
       <main
         ref={ref}
-        className={`${anim} opacity-0 h-fit bg-black-1 bg-opacity-75 py-5 px-5 flex flex-col gap-12`}
+        className={`${anim} opacity-0 h-fit bg-black-1 bg-opacity-75 p-5 md:p-20 flex flex-col gap-12`}
       >
         <div className="h-fit flex flex-col justify-center items-center gap-10">
           <div className="border-8 border-blue-500 w-fit h-fit rounded-full flex justify-center items-center">
@@ -63,14 +63,14 @@ export default function About() {
               className="rounded-full "
             />
           </div>
-          <div className="font-rubik text-3xl flex flex-col gap-2">
+          <div className="font-rubik text-3xl md:text-4xl flex flex-col gap-2">
             <p className="text-white text-center">I am Yoltic and I enjoy</p>
             <div className="h-8 min-h-fit flex">
               <p className="text-green-1 text-center" ref={el} />
             </div>
           </div>
         </div>
-        <div className="font-rubik text-white text-lg flex flex-col gap-5">
+        <div className="font-rubik text-white text-lg md:text-xl flex flex-col gap-5">
           <p>
             I love solving hard problems using computer algorithms. Especially
             the ones encountered in Advent of Code.

@@ -39,7 +39,7 @@ export default function Header() {
       </button>
       <nav
         id="navbar"
-        className={`fixed z-50 h-screen overflow-y-hidden inset-y-0 left-0 right-2/10 bg-black bg-opacity-70 flex flex-col justify-between pt-36 px-5 pb-5 transition-transform duration-300 ${translateNav} md:h-16 md:w-screen md:translate-x-0 md:flex-row md:py-0 md:bg-blue-2 md:bg-opacity-100 md:absolute md:items-center md:text-xl lg:text-3xl`}
+        className={`fixed z-50 h-screen overflow-y-hidden inset-y-0 left-0 right-2/10 bg-black bg-opacity-70 flex flex-col justify-between pt-36 px-5 pb-5 transition-transform duration-300 ${translateNav} md:h-16 md:w-screen md:max-w-full md:translate-x-0 md:flex-row md:py-0 md:bg-blue-2 md:bg-opacity-100 md:absolute md:items-center md:text-xl lg:text-3xl`}
         ref={navEl}
         onBlur={handleBlur}
         onFocus={handleFocus}

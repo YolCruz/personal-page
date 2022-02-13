@@ -10,7 +10,7 @@ export default function Mobile() {
           image="/pomodoro_mobile_finished.png"
           w={432}
           h={833}
-          link="/websites/pomodoro"
+          link="/page/pomodoro"
           alt="How the pomodoro app looks"
         />
         <AppDescriptionMobile
@@ -20,7 +20,7 @@ export default function Mobile() {
           image="/calculator_mobile.png"
           w={818}
           h={1594}
-          link="/websites/calculator"
+          link="/page/calculator"
           alt="How the calculator app looks"
         />
       </div>

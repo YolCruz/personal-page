@@ -1,8 +1,9 @@
 import About from "./about";
 import styles from "styles/main.module.scss";
 import Welcome from "./welcome";
-import Portfolio from "./portfolio";
+import Portfolio from "./portfolio/portfolio";
 import Header from "./header";
+import Contact from "./contact/contact";
 
 export default function MainPage() {
   return (
@@ -15,6 +16,7 @@ export default function MainPage() {
         <Welcome />
         <About />
         <Portfolio />
+        <Contact />
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 import styles from "styles/websites/calculator.module.scss";
-import { History } from "pages/websites/calculator";
+import { History } from "pages/page/calculator";
 
 interface Props {
   history: History[];

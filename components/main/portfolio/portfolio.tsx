@@ -17,8 +17,8 @@ export default function Portfolio() {
     }
   }, [inView]);
   return (
-    <section id="portfolio" className={`mt-10 min-h-screen opacity-0 ${anim}`}>
-      <h1 ref={ref} className="font-rubik text-white text-center text-2xl">
+    <section id="portfolio" className={`mt-10 min-h-screen opacity-0 w-screen max-w-full flex flex-col justify-center ${anim} px-1 md:px-8`}>
+      <h1 ref={ref} className="font-rubik text-white text-center text-2xl md:text-3xl">
         LEARNING PROJECTS I&apos;VE MADE
       </h1>
       <Mobile />
