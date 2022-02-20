@@ -1,0 +1,67 @@
+.operation {
+  min-height: 1.75rem;
+}
+
+// Grid
+
+.container {
+  display: grid;
+  grid-template-rows: 35% 15% 50%;
+  grid-template-areas:
+    "history"
+    "userInput"
+    "buttons";
+}
+
+.historial {
+  grid-area: history;
+}
+
+.user_input {
+  grid-area: userInput;
+}
+
+.calc_buttons {
+  grid-area: buttons;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "power2 sqrt DEL AC"
+    "parentheses1 parentheses2 factorial division"
+    "number7 number8 number9 multiplication"
+    "number4 number5 number6 minus"
+    "number1 number2 number3 plus"
+    "number0 number0 point equal";
+}
+
+@media (max-height: 550px) {
+  .container {
+    padding: 4rem 0 0;
+    grid-template-rows: 20% 15% 65%;
+  }
+}
+@media (max-height: 450px) {
+  .container {
+    grid-template-rows: 20% 80%;
+    grid-template-areas:
+      "userInput"
+      "buttons";
+  }
+  .historial {
+    display: none;
+  }
+}
+@media (max-height: 350px) {
+  .user_input {
+    input, p{
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+  .calc_buttons {
+    & button {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
