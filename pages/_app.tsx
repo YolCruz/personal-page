@@ -1,12 +1,27 @@
 import "styles/globals.scss";
 import { AppProps } from "next/app";
-import React from "react"
-import { Provider } from "react-redux"
+import React from "react";
+import { MantineProvider } from "@mantine/core";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Component {...pageProps} />
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        theme={{
+          colorScheme: "light",
+        }}
+      >
+        <Component {...pageProps} />
+      </MantineProvider>
     </>
   );
 }

@@ -29,9 +29,9 @@ export default function Pomodoro() {
   const [displayTimer, setDisplayTimer] = useState("flex");
   const [displaySettingsIcon, setDisplaySettingsIcon] =
     useState("inline-block");
-    const [showInfo, setInfo] = useState("hidden")
+  const [showInfo, setInfo] = useState("hidden");
 
-  const timer = useRef<NodeJS.Timer>();
+  const timer = useRef<NodeJS.Timer>(null);
   useEffect(() => {
     setTotal(parseInt(workMin) * 60);
     setMin(workMin);
@@ -130,12 +130,12 @@ export default function Pomodoro() {
   };
 
   const infoClick = () => {
-    setInfo("grid")
-  }
+    setInfo("grid");
+  };
 
   const infoClose = () => {
-    setInfo("hidden")
-  }
+    setInfo("hidden");
+  };
 
   return (
     <Website
@@ -152,7 +152,7 @@ export default function Pomodoro() {
         voidClick={voidClick}
         showVoid={showVoid}
       />
-      <Info showInfo={showInfo} infoClose={infoClose}/>
+      <Info showInfo={showInfo} infoClose={infoClose} />
       <div className="flex flex-col justify-center items-center py-4 min-h-screen text-white bg-dark-red-main-2">
         <div className="aspect-square w-11/12 bg-blue-900 rounded-2xl max-w-3xl grid place-items-center duration-300 ease-out relative">
           <div className="absolute w-full flex justify-end p-2">
@@ -160,7 +160,7 @@ export default function Pomodoro() {
               <span
                 className="iconify"
                 data-icon="ant-design:info-circle-outlined"
-                style={{color: "white"}}
+                style={{ color: "white" }}
                 data-width="40"
                 data-height="40"
               />

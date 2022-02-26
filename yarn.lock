@@ -69,7 +69,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -185,6 +185,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emotion/server@npm:^11.4.0":
+  version: 11.4.0
+  resolution: "@emotion/server@npm:11.4.0"
+  dependencies:
+    "@emotion/utils": ^1.0.0
+    html-tokenize: ^2.0.0
+    multipipe: ^1.0.2
+    through: ^2.3.8
+  peerDependencies:
+    "@emotion/css": ^11.0.0-rc.0
+  peerDependenciesMeta:
+    "@emotion/css":
+      optional: true
+  checksum: 41ed2472c3b16e5f28126fed755098d1cc2f189096fa830b98583558d93d153e5b0ced8bd1a7514803f1c29ad218a5cd75dc6a348efcd44167a4cdd11887b2f2
+  languageName: node
+  linkType: hard
+
 "@emotion/sheet@npm:^1.1.0":
   version: 1.1.0
   resolution: "@emotion/sheet@npm:1.1.0"
@@ -279,6 +296,65 @@ __metadata:
   peerDependencies:
     react: ">=16.8.0"
   checksum: 74bb6dc27d12af102566a9c8adb75614de2e0998e4f01c762df366a54d38830f3d816c02dd9f1d3a5c61478ae0f92b55d4e41b975fd482e115f0bbfa6562e0a3
+  languageName: node
+  linkType: hard
+
+"@mantine/modals@npm:^3.6.9":
+  version: 3.6.9
+  resolution: "@mantine/modals@npm:3.6.9"
+  peerDependencies:
+    "@mantine/core": 3.6.9
+    "@mantine/hooks": 3.6.9
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: a7a026e1d30b7a40efa2f0094011d96fcb1b930dd10a78ee73f1f3ed83b059e9fceb482aca2e47b304bce72c9071bcff2769582510221a5efe52950ecd385943
+  languageName: node
+  linkType: hard
+
+"@mantine/next@npm:^3.6.9":
+  version: 3.6.9
+  resolution: "@mantine/next@npm:3.6.9"
+  dependencies:
+    "@mantine/ssr": 3.6.9
+  peerDependencies:
+    next: "*"
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: e6adaf4a7fd3a85d6b31c09a68eadc56fd0df6a5a04d1a80124bb7ce3289d9227c6863cf2474e30c547a9127bd256329fbd8aff95a7fb0c8f8d0e33c9c666962
+  languageName: node
+  linkType: hard
+
+"@mantine/notifications@npm:^3.6.9":
+  version: 3.6.9
+  resolution: "@mantine/notifications@npm:3.6.9"
+  dependencies:
+    clsx: ^1.1.1
+    react-transition-group: ^4.4.2
+  peerDependencies:
+    "@mantine/core": 3.6.9
+    "@mantine/hooks": 3.6.9
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 870cf7ff05304d058fc6d9e0fba778f456ed2ccee4421d3ad99b2059911b4b167ceae7a582b8a118d63f6163bf65e9c159cf3d3bf532aa7563a77423e65b44d2
+  languageName: node
+  linkType: hard
+
+"@mantine/ssr@npm:3.6.9":
+  version: 3.6.9
+  resolution: "@mantine/ssr@npm:3.6.9"
+  dependencies:
+    "@emotion/cache": ^11.7.1
+    "@emotion/react": ^11.7.1
+    "@emotion/serialize": ^1.0.2
+    "@emotion/server": ^11.4.0
+    "@emotion/utils": ^1.0.0
+    "@mantine/styles": 3.6.9
+    csstype: ^3.0.9
+    html-react-parser: ^1.3.0
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: f3cf101e270a96797498a5a773daa7cf2b7f0a29158e070ad6a5a7bb706339d177c7fc02f7f9c4917f2a1c393bd4a32581d34355d6ddd4ba8f8aa82a0ebaba74
   languageName: node
   linkType: hard
 
@@ -1522,6 +1598,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"buffer-from@npm:~0.1.1":
+  version: 0.1.2
+  resolution: "buffer-from@npm:0.1.2"
+  checksum: 50a1fa5da97d2081b7d945483c8967d3b89a096fa585eb55000bb2100e827c647c9370280ec9bd057da8f9fa5abc1d3b764228851a31fa8a67f659f70c0052d8
+  languageName: node
+  linkType: hard
+
 "cacache@npm:^15.2.0":
   version: 15.3.0
   resolution: "cacache@npm:15.3.0"
@@ -2357,6 +2440,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-helpers@npm:^5.0.1":
+  version: 5.2.1
+  resolution: "dom-helpers@npm:5.2.1"
+  dependencies:
+    "@babel/runtime": ^7.8.7
+    csstype: ^3.0.2
+  checksum: 863ba9e086f7093df3376b43e74ce4422571d404fc9828bf2c56140963d5edf0e56160f9b2f3bb61b282c07f8fc8134f023c98fd684bddcb12daf7b0f14d951c
+  languageName: node
+  linkType: hard
+
+"dom-serializer@npm:^1.0.1":
+  version: 1.3.2
+  resolution: "dom-serializer@npm:1.3.2"
+  dependencies:
+    domelementtype: ^2.0.1
+    domhandler: ^4.2.0
+    entities: ^2.0.0
+  checksum: bff48714944d67b160db71ba244fb0f3fe72e77ef2ec8414e2eeb56f2d926e404a13456b8b83a5392e217ba47dec2ec0c368801b31481813e94d185276c3e964
+  languageName: node
+  linkType: hard
+
+"domelementtype@npm:^2.0.1, domelementtype@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "domelementtype@npm:2.2.0"
+  checksum: 24cb386198640cd58aa36f8c987f2ea61859929106d06ffcc8f547e70cb2ed82a6dc56dcb8252b21fba1f1ea07df6e4356d60bfe57f77114ca1aed6828362629
+  languageName: node
+  linkType: hard
+
 "domexception@npm:^4.0.0":
   version: 4.0.0
   resolution: "domexception@npm:4.0.0"
@@ -2366,10 +2477,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"domhandler@npm:4.3.0, domhandler@npm:^4.2.0, domhandler@npm:^4.2.2":
+  version: 4.3.0
+  resolution: "domhandler@npm:4.3.0"
+  dependencies:
+    domelementtype: ^2.2.0
+  checksum: d2a2dbf40dd99abf936b65ad83c6b530afdb3605a87cad37a11b5d9220e68423ebef1b86c89e0f6d93ffaf315cc327cf1a988652e7a9a95cce539e3984f4c64d
+  languageName: node
+  linkType: hard
+
 "dompurify@npm:^2.3.5":
   version: 2.3.6
   resolution: "dompurify@npm:2.3.6"
   checksum: 4b2bbf6bc68ebd776aec4a533cef74a5ae30391eed528f3df748af71da318afdc298b6f40449bef093b7454ffd2ae82656636560474de5a3b34316b762c85b12
+  languageName: node
+  linkType: hard
+
+"domutils@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "domutils@npm:2.8.0"
+  dependencies:
+    dom-serializer: ^1.0.1
+    domelementtype: ^2.2.0
+    domhandler: ^4.2.0
+  checksum: abf7434315283e9aadc2a24bac0e00eab07ae4313b40cc239f89d84d7315ebdfd2fb1b5bf750a96bc1b4403d7237c7b2ebf60459be394d625ead4ca89b934391
   languageName: node
   linkType: hard
 
@@ -2394,6 +2525,15 @@ __metadata:
   version: 1.0.0
   resolution: "dup@npm:1.0.0"
   checksum: 1abda5b5b0b85f7ed1fef0fbe68e426c0951b0b9c0daea264d0e2fd844d6cc644e838faefc4e7db5385896a244e1284bfe3d3f6b4e673f37aac5f58f61970e36
+  languageName: node
+  linkType: hard
+
+"duplexer2@npm:^0.1.2":
+  version: 0.1.4
+  resolution: "duplexer2@npm:0.1.4"
+  dependencies:
+    readable-stream: ^2.0.2
+  checksum: 744961f03c7f54313f90555ac20284a3fb7bf22fdff6538f041a86c22499560eb6eac9d30ab5768054137cb40e6b18b40f621094e0261d7d8c35a37b7a5ad241
   languageName: node
   linkType: hard
 
@@ -2475,6 +2615,20 @@ __metadata:
   dependencies:
     once: ^1.4.0
   checksum: 530a5a5a1e517e962854a31693dbb5c0b2fc40b46dad2a56a2deec656ca040631124f4795823acc68238147805f8b021abbe221f4afed5ef3c8e8efc2024908b
+  languageName: node
+  linkType: hard
+
+"entities@npm:^2.0.0":
+  version: 2.2.0
+  resolution: "entities@npm:2.2.0"
+  checksum: 19010dacaf0912c895ea262b4f6128574f9ccf8d4b3b65c7e8334ad0079b3706376360e28d8843ff50a78aabcb8f08f0a32dbfacdc77e47ed77ca08b713669b3
+  languageName: node
+  linkType: hard
+
+"entities@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "entities@npm:3.0.1"
+  checksum: aaf7f12033f0939be91f5161593f853f2da55866db55ccbf72f45430b8977e2b79dbd58c53d0fdd2d00bd7d313b75b0968d09f038df88e308aa97e39f9456572
   languageName: node
   linkType: hard
 
@@ -3653,12 +3807,63 @@ __metadata:
   languageName: node
   linkType: hard
 
+"html-dom-parser@npm:1.1.0":
+  version: 1.1.0
+  resolution: "html-dom-parser@npm:1.1.0"
+  dependencies:
+    domhandler: 4.3.0
+    htmlparser2: 7.2.0
+  checksum: 39dab4c11cd26431405a38a768f6c2c6d837e57af128ee9e93262913782f339df39519ed5935237e7d8e79f0c60c86dccdb65f9bd576b98bd72bec4ab2ff193a
+  languageName: node
+  linkType: hard
+
 "html-encoding-sniffer@npm:^3.0.0":
   version: 3.0.0
   resolution: "html-encoding-sniffer@npm:3.0.0"
   dependencies:
     whatwg-encoding: ^2.0.0
   checksum: 8d806aa00487e279e5ccb573366a951a9f68f65c90298eac9c3a2b440a7ffe46615aff2995a2f61c6746c639234e6179a97e18ca5ccbbf93d3725ef2099a4502
+  languageName: node
+  linkType: hard
+
+"html-react-parser@npm:^1.3.0":
+  version: 1.4.8
+  resolution: "html-react-parser@npm:1.4.8"
+  dependencies:
+    domhandler: 4.3.0
+    html-dom-parser: 1.1.0
+    react-property: 2.0.0
+    style-to-js: 1.1.0
+  peerDependencies:
+    react: 0.14 || 15 || 16 || 17
+  checksum: 3af114c704146677ca3bf8922f29733ae1533343fe020c7f452ae5bb703eb0a29b4de9d90b2efc904c20ffe8f3fb9a5ce4dce8623f529f3538b0c32e9900f9e2
+  languageName: node
+  linkType: hard
+
+"html-tokenize@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "html-tokenize@npm:2.0.1"
+  dependencies:
+    buffer-from: ~0.1.1
+    inherits: ~2.0.1
+    minimist: ~1.2.5
+    readable-stream: ~1.0.27-1
+    through2: ~0.4.1
+  bin:
+    html-tokenize: bin/cmd.js
+  checksum: 4e04078fd22cf274fc1fa430490af3feda1c3bc4dd2fc88880caf6c2e816992d508bc44a7b16721b713a6b98d880f43e10ea4b169529056134cd488403adc8fc
+  languageName: node
+  linkType: hard
+
+"htmlparser2@npm:7.2.0":
+  version: 7.2.0
+  resolution: "htmlparser2@npm:7.2.0"
+  dependencies:
+    domelementtype: ^2.0.1
+    domhandler: ^4.2.2
+    domutils: ^2.8.0
+    entities: ^3.0.1
+  checksum: 96563d9965729cfcb3f5f19c26d013c6831b4cb38d79d8c185e9cd669ea6a9ffe8fb9ccc74d29a068c9078aa0e2767053ed6b19aa32723c41550340d0094bea0
   languageName: node
   linkType: hard
 
@@ -3819,6 +4024,13 @@ __metadata:
   version: 2.0.4
   resolution: "inherits@npm:2.0.4"
   checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
+  languageName: node
+  linkType: hard
+
+"inline-style-parser@npm:0.1.1":
+  version: 0.1.1
+  resolution: "inline-style-parser@npm:0.1.1"
+  checksum: 5d545056a3e1f2bf864c928a886a0e1656a3517127d36917b973de581bd54adc91b4bf1febcb0da054f204b4934763f1a4e09308b4d55002327cf1d48ac5d966
   languageName: node
   linkType: hard
 
@@ -4505,7 +4717,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5":
+"minimist@npm:^1.1.1, minimist@npm:^1.2.0, minimist@npm:^1.2.5, minimist@npm:~1.2.5":
   version: 1.2.5
   resolution: "minimist@npm:1.2.5"
   checksum: 86706ce5b36c16bfc35c5fe3dbb01d5acdc9a22f2b6cc810b6680656a1d2c0e44a0159c9a3ba51fb072bb5c203e49e10b51dcd0eec39c481f4c42086719bae52
@@ -4643,6 +4855,16 @@ __metadata:
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: aa92de608021b242401676e35cfa5aa42dd70cbdc082b916da7fb925c542173e36bce97ea3e804923fe92c0ad991434e4a38327e15a1b5b5f945d66df615ae6d
+  languageName: node
+  linkType: hard
+
+"multipipe@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "multipipe@npm:1.0.2"
+  dependencies:
+    duplexer2: ^0.1.2
+    object-assign: ^4.1.0
+  checksum: 99cf8934714da7f9ce03e1f0a99621a41443217d80849c62e22b31b6ac356b9acd22f41e555fd7a759f1c7c9d3273e7abff2fb82dff8285f00a6a1022727e4ab
   languageName: node
   linkType: hard
 
@@ -4895,6 +5117,13 @@ __metadata:
   version: 1.1.1
   resolution: "object-keys@npm:1.1.1"
   checksum: b363c5e7644b1e1b04aa507e88dcb8e3a2f52b6ffd0ea801e4c7a62d5aa559affe21c55a07fd4b1fd55fc03a33c610d73426664b20032405d7b92a1414c34d6a
+  languageName: node
+  linkType: hard
+
+"object-keys@npm:~0.4.0":
+  version: 0.4.0
+  resolution: "object-keys@npm:0.4.0"
+  checksum: 1be3ebe9b48c0d5eda8e4a30657d887a748cb42435e0e2eaf49faf557bdd602cd2b7558b8ce90a4eb2b8592d16b875a1900bce859cbb0f35b21c67e11a45313c
   languageName: node
   linkType: hard
 
@@ -5361,7 +5590,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.7.2":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -5464,6 +5693,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-icons@npm:^4.3.1":
+  version: 4.3.1
+  resolution: "react-icons@npm:4.3.1"
+  peerDependencies:
+    react: "*"
+  checksum: 2cc608acdd3e906aa3aaee290b8398220639677c949382d86e554020e5dab6a9f1ed7484418aa5272cb5c5c018e1fc9a323d433d901697a76530029f9ecb1263
+  languageName: node
+  linkType: hard
+
 "react-intersection-observer@npm:^8.33.1":
   version: 8.33.1
   resolution: "react-intersection-observer@npm:8.33.1"
@@ -5512,6 +5750,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-property@npm:2.0.0":
+  version: 2.0.0
+  resolution: "react-property@npm:2.0.0"
+  checksum: 8a444df30ef0937689c7968dae2501a0ca523777169f450e1f7ef5beeb855d6509bd058bf612f6ed8f459aa35468335d356e50264492e1938586e59fdb988262
+  languageName: node
+  linkType: hard
+
 "react-redux@npm:^7.2.6":
   version: 7.2.6
   resolution: "react-redux@npm:7.2.6"
@@ -5546,6 +5791,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-transition-group@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "react-transition-group@npm:4.4.2"
+  dependencies:
+    "@babel/runtime": ^7.5.5
+    dom-helpers: ^5.0.1
+    loose-envify: ^1.4.0
+    prop-types: ^15.6.2
+  peerDependencies:
+    react: ">=16.6.0"
+    react-dom: ">=16.6.0"
+  checksum: b67bf5b3e86dbab72d658b9a52a3589e5960583ab28c7c66272427d8fe30d4c7de422d5046ae96bd2683cdf80cc3264b2516f5ce80cae1dbe6cf3ca6dda392c5
+  languageName: node
+  linkType: hard
+
 "react@npm:^17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
@@ -5556,7 +5816,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:>=1.0.33-1 <1.1.0-0":
+"readable-stream@npm:>=1.0.33-1 <1.1.0-0, readable-stream@npm:~1.0.17, readable-stream@npm:~1.0.27-1":
   version: 1.0.34
   resolution: "readable-stream@npm:1.0.34"
   dependencies:
@@ -5568,7 +5828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"readable-stream@npm:^2.0.0, readable-stream@npm:^2.2.2, readable-stream@npm:^2.3.5, readable-stream@npm:~2.3.6":
+"readable-stream@npm:^2.0.0, readable-stream@npm:^2.0.2, readable-stream@npm:^2.2.2, readable-stream@npm:^2.3.5, readable-stream@npm:~2.3.6":
   version: 2.3.7
   resolution: "readable-stream@npm:2.3.7"
   dependencies:
@@ -6253,6 +6513,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"style-to-js@npm:1.1.0":
+  version: 1.1.0
+  resolution: "style-to-js@npm:1.1.0"
+  dependencies:
+    style-to-object: 0.3.0
+  checksum: 8facf902b55271de8edf105d7b5d5017869518e34a2ee4b8e25093ea3ecf25ead9cc4b6a7fee7c17f7ac3ff95d36198d81aa4d53a46d4fee7d856903a097557d
+  languageName: node
+  linkType: hard
+
+"style-to-object@npm:0.3.0":
+  version: 0.3.0
+  resolution: "style-to-object@npm:0.3.0"
+  dependencies:
+    inline-style-parser: 0.1.1
+  checksum: 4d7084015207f2a606dfc10c29cb5ba569f2fe8005551df7396110dd694d6ff650f2debafa95bd5d147dfb4ca50f57868e2a7f91bf5d11ef734fe7ccbd7abf59
+  languageName: node
+  linkType: hard
+
 "styled-jsx@npm:5.0.0":
   version: 5.0.0
   resolution: "styled-jsx@npm:5.0.0"
@@ -6434,6 +6712,23 @@ __metadata:
     readable-stream: ~2.3.6
     xtend: ~4.0.1
   checksum: beb0f338aa2931e5660ec7bf3ad949e6d2e068c31f4737b9525e5201b824ac40cac6a337224856b56bd1ddd866334bbfb92a9f57cd6f66bc3f18d3d86fc0fe50
+  languageName: node
+  linkType: hard
+
+"through2@npm:~0.4.1":
+  version: 0.4.2
+  resolution: "through2@npm:0.4.2"
+  dependencies:
+    readable-stream: ~1.0.17
+    xtend: ~2.1.1
+  checksum: 50e41d272db4a74b10a62b7e92eeeb8d30e426a7a8a772cd85fac0f8e21d92c6e5cb5012d7db5f7a20f6e147e1f14f87062058c77b05bc9d463ae4d8b3eb1e42
+  languageName: node
+  linkType: hard
+
+"through@npm:^2.3.8":
+  version: 2.3.8
+  resolution: "through@npm:2.3.8"
+  checksum: a38c3e059853c494af95d50c072b83f8b676a9ba2818dcc5b108ef252230735c54e0185437618596c790bbba8fcdaef5b290405981ffa09dce67b1f1bf190cbd
   languageName: node
   linkType: hard
 
@@ -7138,6 +7433,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"xtend@npm:~2.1.1":
+  version: 2.1.2
+  resolution: "xtend@npm:2.1.2"
+  dependencies:
+    object-keys: ~0.4.0
+  checksum: a8b79f31502c163205984eaa2b196051cd2fab0882b49758e30f2f9018255bc6c462e32a090bf3385d1bda04755ad8cc0052a09e049b0038f49eb9b950d9c447
+  languageName: node
+  linkType: hard
+
 "yallist@npm:^4.0.0":
   version: 4.0.0
   resolution: "yallist@npm:4.0.0"
@@ -7158,6 +7462,9 @@ __metadata:
   dependencies:
     "@mantine/core": ^3.6.9
     "@mantine/hooks": ^3.6.9
+    "@mantine/modals": ^3.6.9
+    "@mantine/next": ^3.6.9
+    "@mantine/notifications": ^3.6.9
     "@reduxjs/toolkit": ^1.7.2
     "@types/eslint": ^8
     "@types/markdown-it": ^12
@@ -7183,6 +7490,7 @@ __metadata:
     postcss: ^8.4.6
     react: ^17.0.2
     react-dom: ^17.0.2
+    react-icons: ^4.3.1
     react-intersection-observer: ^8.33.1
     react-plotly.js: ^2.5.1
     react-redux: ^7.2.6
