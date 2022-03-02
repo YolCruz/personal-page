@@ -2,7 +2,6 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
-import Header from "components/header"
 
 export function Website({
   children,
@@ -19,18 +18,8 @@ export function Website({
     <>
       <Head>
         <title>{title}</title>
-        {icon ? (
-          <link rel="icon" href={icon} />
-        ) : (
-          <link rel="icon" href="/YC.svg" />
-        )}
-        {description ? (
-          <meta name="description" content={description} />
-        ) : (
-          <></>
-        )}
+        {description && <meta name="description" content={description} />}
       </Head>
-      <Header />
       <>{children}</>
     </>
   );

@@ -1,8 +1,9 @@
 import "styles/globals.scss";
 import { AppProps } from "next/app";
 import React from "react";
-import { MantineProvider } from "@mantine/core";
 import Head from "next/head";
+import { MantineProvider } from "@mantine/core";
+import { ModalsProvider } from "@mantine/modals";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -13,14 +14,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <MantineProvider
-        withGlobalStyles
-        withNormalizeCSS
-        theme={{
-          colorScheme: "light",
-        }}
-      >
-        <Component {...pageProps} />
+      <MantineProvider theme={{colorScheme: "dark"}}>
+        <ModalsProvider>
+          <Component {...pageProps} />
+        </ModalsProvider>
       </MantineProvider>
     </>
   );
