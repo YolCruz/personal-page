@@ -7,11 +7,13 @@ export default function Clock() {
     return `conic-gradient(#0D58CA ${deg}deg,#353940 ${deg}deg)`;
   });
   const { minutes, seconds } = useTimerSelector((state) => {
-    const remainingSec = Math.floor(
-      (state.timer.totalSec - state.timer.currentSec) % 60
+    const remainingSec = Math.max(
+      Math.floor((state.timer.totalSec - state.timer.currentSec) % 60),
+      0
     ).toString();
-    const remainingMin = Math.floor(
-      (state.timer.totalSec - state.timer.currentSec) / 60
+    const remainingMin = Math.max(
+      Math.floor((state.timer.totalSec - state.timer.currentSec) / 60),
+      0
     ).toString();
     return {
       minutes: remainingMin.length === 2 ? remainingMin : `0${remainingMin}`,

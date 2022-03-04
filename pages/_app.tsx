@@ -14,7 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
       </Head>
-      <MantineProvider theme={{colorScheme: "dark"}}>
+      <MantineProvider theme={{ colorScheme: "dark" }}>
         <ModalsProvider>
           <Component {...pageProps} />
         </ModalsProvider>

@@ -2,8 +2,9 @@ import { useClickOutside } from "@mantine/hooks";
 import { Switch } from "@mantine/core";
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
-import styles from "styles/pomodoro2/config.module.scss";
 import ConfigTimer from "./configTimer";
+import { useTimerSelector, useTimerDispatch } from "../store/hooks";
+import { autoStartTimers } from "../store/timerSlice";
 
 interface Props {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -12,6 +13,8 @@ interface Props {
 export default function Config({ setOpen }: Props) {
   const ref = useClickOutside(() => setOpen(false));
   const [timerConfig, setTimerConfig] = useState(false);
+  const autoStart = useTimerSelector((state) => state.timer.autoStart);
+  const dispatch = useTimerDispatch();
 
   return (
     <div
@@ -27,7 +30,7 @@ export default function Config({ setOpen }: Props) {
           display: timerConfig ? "flex" : "none",
         }}
       >
-        <ConfigTimer setTimerConfig={setTimerConfig}/>
+        <ConfigTimer setTimerConfig={setTimerConfig} />
       </div>
       <div
         className="flex-col gap-3 text-lg top-[28%]"
@@ -36,14 +39,20 @@ export default function Config({ setOpen }: Props) {
         }}
       >
         <div className="flex justify-between items-center">
-          <p>Timer</p>
-          <button className="mr-2" onClick={() => setTimerConfig(true)}>
+          <p>Mode</p>
+          <button className="mr-1" onClick={() => setTimerConfig(true)}>
             <IoIosArrowForward size={20} />
           </button>
         </div>
         <div className="flex justify-between items-center gap-5">
           <p>Auto start timers</p>
-          <Switch className="" />
+          <Switch
+            className=""
+            aria-label="Auto start timers"
+            radius="md"
+            checked={autoStart}
+            onChange={() => dispatch(autoStartTimers())}
+          />
         </div>
       </div>
     </div>

@@ -10,6 +10,21 @@
   transform: translateY();
 }
 
+::-webkit-scrollbar {
+  background: transparent;
+  width: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(22, 99, 150);
+  border-radius: 1rem;
+
+  &:hover {
+    background: rgb(87, 94, 98);
+  }
+}
+
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document

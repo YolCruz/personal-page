@@ -1,31 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Modes from "./clock/modes";
+import Clock from "./clock/clock";
+import Buttons from "./clock/buttons";
+import { useTimerDispatch } from "./store/hooks";
+import { updatePomodoros, CompletedPomodoros } from "./store/timerSlice";
 
-interface Props {
-  displayTimer: string;
-  min: string;
-  sec: string;
-  startClick: () => void;
-  text: string
-}
-
-export default function Timer({displayTimer, min, sec, startClick, text}: Props) {
+export default function Timer() {
+  const dispatch = useTimerDispatch();
+  useEffect(() => {
+    if (localStorage["completed-pomodoros"]) {
+      const data: CompletedPomodoros = JSON.parse(
+        localStorage.getItem("completed-pomodoros")
+      );
+      dispatch(updatePomodoros(data));
+    }
+  }, []);
   return (
-    <div
-      className="flex-col justify-center items-center"
-      style={{
-        display: `${displayTimer}`,
-      }}
-    >
-      <div className="text-5xl sm:text-7xl">
-        <span id="minutes">{min}</span>
-        <span id="colon">:</span>
-        <span id="seconds">{sec}</span>
-      </div>
-      <div>
-        <button className="text-3xl sm:text-5xl px-4 py-2" onClick={startClick}>
-          {text}
-        </button>
-      </div>
+    <div className="flex flex-col gap-9">
+      <Modes />
+      <Clock />
+      <Buttons />
     </div>
   );
 }
