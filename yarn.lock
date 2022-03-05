@@ -5778,7 +5778,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-textarea-autosize@npm:^8.3.2":
+"react-textarea-autosize@npm:^8.3.2, react-textarea-autosize@npm:^8.3.3":
   version: 8.3.3
   resolution: "react-textarea-autosize@npm:8.3.3"
   dependencies:
@@ -7494,6 +7494,7 @@ __metadata:
     react-intersection-observer: ^8.33.1
     react-plotly.js: ^2.5.1
     react-redux: ^7.2.6
+    react-textarea-autosize: ^8.3.3
     redux-devtools: ^3.7.0
     sass: ^1.49.8
     tailwindcss: ^3.0.23

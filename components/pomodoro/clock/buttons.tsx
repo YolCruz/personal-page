@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { BsFillGearFill } from "react-icons/bs";
 import { MdRestartAlt } from "react-icons/md";
 import Config from "./config";
-import { useTimerSelector, useTimerDispatch } from "../store/hooks";
+import { usePomodoroSelector, usePomodoroDispatch } from "../store/hooks";
 import {
   pomodoroCompleted,
   updatePomodoros,
@@ -16,14 +16,14 @@ import {
 } from "../store/timerSlice";
 
 export default function Buttons() {
-  const text = useTimerSelector((state) => state.timer.text);
-  const selectedTimer = useTimerSelector((state) => state.timer.selectedTimer);
-  const borderColor = useTimerSelector((state) => state.timer.borderColor);
-  const currentSec = useTimerSelector((state) => state.timer.currentSec);
-  const totalSec = useTimerSelector((state) => state.timer.totalSec);
-  const workCompleted = useTimerSelector((state) => state.timer.workCompleted);
-  const autoStart = useTimerSelector((state) => state.timer.autoStart);
-  const dispatch = useTimerDispatch();
+  const text = usePomodoroSelector((state) => state.timer.text);
+  const selectedTimer = usePomodoroSelector((state) => state.timer.selectedTimer);
+  const borderColor = usePomodoroSelector((state) => state.timer.borderColor);
+  const currentSec = usePomodoroSelector((state) => state.timer.currentSec);
+  const totalSec = usePomodoroSelector((state) => state.timer.totalSec);
+  const workCompleted = usePomodoroSelector((state) => state.timer.workCompleted);
+  const autoStart = usePomodoroSelector((state) => state.timer.autoStart);
+  const dispatch = usePomodoroDispatch();
 
   const interval = useInterval(() => {
     dispatch(addSecond());
@@ -95,7 +95,7 @@ export default function Buttons() {
           onClick={() => setOpen(true)}
           title="Configuration"
         >
-          <BsFillGearFill color="white" size={24} />
+          <BsFillGearFill color="white" size="1.5rem" />
         </button>
         <button
           className="p-4 border-2 border-blue-4 rounded-xl"
@@ -111,7 +111,7 @@ export default function Buttons() {
           }}
           title="Restart session"
         >
-          <MdRestartAlt color="white" size={24} />
+          <MdRestartAlt color="white" size="1.5rem" />
         </button>
       </div>
     </>

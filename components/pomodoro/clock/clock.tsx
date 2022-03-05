@@ -1,12 +1,12 @@
 import React from "react";
-import { useTimerSelector } from "../store/hooks";
+import { usePomodoroSelector } from "../store/hooks";
 
 export default function Clock() {
-  const currentDegrees = useTimerSelector((state) => {
+  const currentDegrees = usePomodoroSelector((state) => {
     const deg = state.timer.stepDeg * state.timer.currentSec;
     return `conic-gradient(#0D58CA ${deg}deg,#353940 ${deg}deg)`;
   });
-  const { minutes, seconds } = useTimerSelector((state) => {
+  const { minutes, seconds } = usePomodoroSelector((state) => {
     const remainingSec = Math.max(
       Math.floor((state.timer.totalSec - state.timer.currentSec) % 60),
       0

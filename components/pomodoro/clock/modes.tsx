@@ -1,25 +1,25 @@
 import React from "react";
-import { useTimerSelector, useTimerDispatch } from "../store/hooks";
+import { usePomodoroSelector, usePomodoroDispatch } from "../store/hooks";
 import { selectTimer, updateClock } from "../store/timerSlice";
 
 const shadow =
   "rgba(255, 255, 255, 0.19) 0px 10px 20px, rgba(255, 255, 255, 0.23) 0px 6px 6px";
 
 export default function Modes() {
-  const workColor = useTimerSelector((state) => state.timer.workColor);
-  const restColor = useTimerSelector((state) => state.timer.restColor);
-  const longRestColor = useTimerSelector((state) => state.timer.longRestColor);
+  const workColor = usePomodoroSelector((state) => state.timer.workColor);
+  const restColor = usePomodoroSelector((state) => state.timer.restColor);
+  const longRestColor = usePomodoroSelector((state) => state.timer.longRestColor);
 
-  const workCompleted = useTimerSelector((state) => state.timer.workCompleted);
-  const restCompleted = useTimerSelector((state) => state.timer.restCompleted);
-  const longRestCompleted = useTimerSelector(
+  const workCompleted = usePomodoroSelector((state) => state.timer.workCompleted);
+  const restCompleted = usePomodoroSelector((state) => state.timer.restCompleted);
+  const longRestCompleted = usePomodoroSelector(
     (state) => state.timer.longRestCompleted
   );
 
-  const mode = useTimerSelector((state) => state.timer.selectedTimer);
-  const active = useTimerSelector((state) => state.timer.text !== "START");
+  const mode = usePomodoroSelector((state) => state.timer.selectedTimer);
+  const active = usePomodoroSelector((state) => state.timer.text !== "START");
 
-  const dispatch = useTimerDispatch();
+  const dispatch = usePomodoroDispatch();
 
   const work = () => {
     dispatch(selectTimer(1));

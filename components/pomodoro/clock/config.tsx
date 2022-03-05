@@ -3,7 +3,7 @@ import { Switch } from "@mantine/core";
 import React, { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import ConfigTimer from "./configTimer";
-import { useTimerSelector, useTimerDispatch } from "../store/hooks";
+import { usePomodoroSelector, usePomodoroDispatch } from "../store/hooks";
 import { autoStartTimers } from "../store/timerSlice";
 
 interface Props {
@@ -13,8 +13,8 @@ interface Props {
 export default function Config({ setOpen }: Props) {
   const ref = useClickOutside(() => setOpen(false));
   const [timerConfig, setTimerConfig] = useState(false);
-  const autoStart = useTimerSelector((state) => state.timer.autoStart);
-  const dispatch = useTimerDispatch();
+  const autoStart = usePomodoroSelector((state) => state.timer.autoStart);
+  const dispatch = usePomodoroDispatch();
 
   return (
     <div

@@ -1,5 +1,5 @@
 import React from "react";
-import { useTimerSelector, useTimerDispatch } from "../store/hooks";
+import { usePomodoroSelector, usePomodoroDispatch } from "../store/hooks";
 import { selectMode, updateClock } from "../store/timerSlice";
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -8,10 +8,10 @@ interface Props {
 }
 
 export default function ConfigTimer({ setTimerConfig }: Props) {
-  const restMin = useTimerSelector((state) => state.timer.restMin);
-  const active = useTimerSelector((state) => state.timer.text !== "START");
+  const restMin = usePomodoroSelector((state) => state.timer.restMin);
+  const active = usePomodoroSelector((state) => state.timer.text !== "START");
 
-  const dispatch = useTimerDispatch();
+  const dispatch = usePomodoroDispatch();
 
   const debug = () => {
     dispatch(selectMode("debug"));

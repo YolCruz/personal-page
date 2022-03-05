@@ -27,6 +27,10 @@
   animation: message-sent 2000ms forwards;
 }
 
+.slideIn {
+  animation: fade-in-slide-up 250ms forwards;
+}
+
 @keyframes fade-in-slide-down {
   0% {
     opacity: 0;

@@ -31,6 +31,7 @@
     "react-intersection-observer": "^8.33.1",
     "react-plotly.js": "^2.5.1",
     "react-redux": "^7.2.6",
+    "react-textarea-autosize": "^8.3.3",
     "sass": "^1.49.8",
     "typed.js": "^2.0.12"
   },
