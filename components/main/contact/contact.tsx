@@ -61,7 +61,7 @@ export default function Contact() {
       <ErrorPromp error={messageError} anim={anim} />
       <SentPromp sent={messageSent} anim={anim} />
 
-      <div className="w-screen max-w-full bg-black-2 mt-10 py-10 px-1 md:px-80 md:py-20 text-white">
+      <div className="w-screen max-w-full bg-black-2 mt-10 pt-10 pb-28 px-1 md:px-80 md:py-20 text-white">
         <h1 ref={ref} className="text-2xl text-center py-1 px-1">Send me an email</h1>
         <form
           ref={form}

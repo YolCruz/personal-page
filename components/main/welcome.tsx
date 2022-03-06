@@ -28,7 +28,7 @@ export default function Welcome() {
         <p className="-tracking-[.01em] text-green-1">WEB DEVELOPER</p>
       </div>
       <div
-        className={`absolute h-full w-full max-w-full -z-40 flex justify-center items-end pb-5 opacity-0 ${anims.icon} ${anim}`}
+        className={`absolute h-full w-full max-w-full -z-40 flex justify-center items-end pb-20 opacity-0 ${anims.icon} ${anim}`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

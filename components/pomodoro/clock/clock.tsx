@@ -31,7 +31,7 @@ export default function Clock() {
       }}
       className={`aspect-square w-full max-w-xl ${
         dims.height < 650 ? "max-h-[21rem]" : ""
-      } rounded-full flex items-center justify-center md:self-center`}
+      } rounded-full flex items-center justify-center self-center`}
     >
       <div
         style={{

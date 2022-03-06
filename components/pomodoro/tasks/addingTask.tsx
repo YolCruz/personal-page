@@ -36,8 +36,12 @@ export default function AddingTask() {
         onKeyPress={(k) => {
           if (k.key === "Enter") {
             k.preventDefault();
-            dispatch(addTask(text));
-            setText("");
+            if (text.length === 0) {
+              dispatch(addingTask(false));
+            } else {
+              dispatch(addTask(text));
+              setText("");
+            }
           }
         }}
       />
@@ -45,8 +49,12 @@ export default function AddingTask() {
         <button
           className="flex-grow py-2 rounded-lg text-sm xs:text-base bg-blue-700"
           onClick={() => {
-            dispatch(addTask(text));
-            setText("");
+            if (text.length === 0) {
+              dispatch(addingTask(false));
+            } else {
+              dispatch(addTask(text));
+              setText("");
+            }
           }}
         >
           Save
