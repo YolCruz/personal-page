@@ -2,23 +2,27 @@ import React, { useState, useRef, useEffect } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { useClickOutside } from "@mantine/hooks";
 import { usePomodoroDispatch, usePomodoroSelector } from "../store/hooks";
-import { addingTask, addTask } from "../store/tasksSlice";
+import { updateLocalStorage, taskChange } from "../store/tasksSlice";
 import anims from "styles/animations.module.scss";
 
-export default function AddingTask() {
-  const adding = usePomodoroSelector((state) => state.tasks.adding);
+interface Props {
+  text: string;
+  id: number;
+}
+
+export default function EditTask({ text, id }: Props) {
   const dispatch = usePomodoroDispatch();
 
-  const [text, setText] = useState("");
-  const ref = useClickOutside(() => dispatch(addingTask(false)));
+  const ref = useClickOutside(() =>
+    dispatch(taskChange({ text, id, completed: false, edit: false }))
+  );
 
+  const [newText, setNewText] = useState(text);
   const textArea = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
-    if (textArea.current && adding) {
-      textArea.current.select();
-    }
-  }, [adding]);
+    if (textArea.current) textArea.current.select();
+  }, [textArea]);
 
   return (
     <div
@@ -28,16 +32,16 @@ export default function AddingTask() {
       <TextareaAutosize
         className="bg-transparent outline-none break-all"
         placeholder="Add new task"
-        value={text}
+        value={newText}
         ref={textArea}
         onChange={(e) => {
-          setText(e.target.value);
+          setNewText(e.target.value);
         }}
         onKeyPress={(k) => {
           if (k.key === "Enter") {
-            k.preventDefault();
-            dispatch(addTask(text));
-            setText("");
+            dispatch(
+              taskChange({ text: newText, id, completed: false, edit: false })
+            );
           }
         }}
       />
@@ -45,15 +49,18 @@ export default function AddingTask() {
         <button
           className="flex-grow py-2 rounded-lg text-base bg-blue-700"
           onClick={() => {
-            dispatch(addTask(text));
-            setText("");
+            dispatch(
+              taskChange({ text: newText, id, completed: false, edit: false })
+            );
           }}
         >
           Save
         </button>
         <button
           className="flex-grow py-2 rounded-lg text-base bg-gray-800"
-          onClick={() => dispatch(addingTask(false))}
+          onClick={() =>
+            dispatch(taskChange({ text, id, completed: false, edit: false }))
+          }
         >
           Cancel
         </button>

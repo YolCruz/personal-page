@@ -2,18 +2,14 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Task {
   text: string;
-  completed: boolean;
   id: number;
+  completed: boolean;
+  edit: boolean;
 }
 
 export interface TasksUpdate {
   tasks: Task[];
   lastID: number;
-}
-
-interface TaskChange {
-  id: number;
-  completed: boolean;
 }
 
 export interface TasksSlice {
@@ -38,24 +34,34 @@ export const tasksSlice = createSlice({
     addTask: (state, action: PayloadAction<string>) => {
       const newTask: Task = {
         text: action.payload,
+        id: state.lastId,
         completed: false,
-        id: state.lastId + 1,
+        edit: false,
       };
-      state.lastId++;
       state.tasks = [...state.tasks, newTask];
     },
-    taskChange: (state, action: PayloadAction<TaskChange>) => {
-      const taskIndex = state.tasks.findIndex(
+    taskChange: (state, action: PayloadAction<Task>) => {
+      const index = state.tasks.findIndex(
         (task) => task.id === action.payload.id
       );
-      state.tasks[taskIndex] = {
-        ...state.tasks[taskIndex],
-        completed: action.payload.completed,
+      state.tasks[index] = {
+        ...action.payload,
       };
+    },
+    deleteTask: (state, action: PayloadAction<number>) => {
+      const index = state.tasks.findIndex((task) => task.id === action.payload);
+      state.tasks.splice(index, 1);
     },
     updateTasks: (state, action: PayloadAction<TasksUpdate>) => {
       state.tasks = action.payload.tasks;
       state.lastId = action.payload.lastID;
+    },
+    updateLastIndex: (state) => {
+      let last = 0;
+      state.tasks.forEach((task) => {
+        if (task.id > last) last = task.id;
+      });
+      state.lastId = last + 1;
     },
     updateLocalStorage: (state) => {
       const data: TasksUpdate = {
@@ -70,9 +76,11 @@ export const tasksSlice = createSlice({
 export const {
   addingTask,
   addTask,
+  deleteTask,
   taskChange,
   updateTasks,
   updateLocalStorage,
+  updateLastIndex,
 } = tasksSlice.actions;
 
 export default tasksSlice.reducer;

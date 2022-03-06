@@ -1,8 +1,10 @@
-import React, { useEffect } from "react";
-import { BsCheckCircleFill } from "react-icons/bs";
+import React from "react";
+import { useHover } from "@mantine/hooks";
+import { BsCheckCircleFill, BsTrashFill } from "react-icons/bs";
+
 import anims from "styles/animations.module.scss";
-import { usePomodoroDispatch, usePomodoroSelector } from "../store/hooks";
-import { taskChange, updateLocalStorage } from "../store/tasksSlice";
+import { usePomodoroDispatch } from "../store/hooks";
+import { taskChange, deleteTask } from "../store/tasksSlice";
 
 interface Props {
   text: string;
@@ -10,24 +12,37 @@ interface Props {
 }
 
 export default function Completed({ text, id }: Props) {
-  const tasks = usePomodoroSelector((state) => state.tasks.tasks);
   const dispatch = usePomodoroDispatch();
 
-  useEffect(() => {
-    dispatch(updateLocalStorage());
-  }, [tasks]);
+  const { hovered, ref } = useHover();
+
   return (
     <div
-      className={`flex-grow border border-gray-500 rounded-xl bg-[#464646] p-4 text-left font-medium text-lg flex items-center gap-3 line-through decoration-gray-100 text-gray-400 opacity-0 ${anims.slideIn}`}
+      ref={ref}
+      className={`flex-grow border border-gray-500 rounded-xl bg-[#464646] p-4 text-left font-medium text-lg flex items-center justify-between gap-3 line-through decoration-gray-100 text-gray-400 opacity-0 ${anims.slideIn}`}
     >
-      <button
-        onClick={() => {
-          dispatch(taskChange({ id, completed: false }));
-        }}
-      >
-        <BsCheckCircleFill color="white" size="1.5rem" />
-      </button>
-      <p>{text}</p>
+      <div className="flex gap-3 items-center">
+        <button
+          onClick={() => {
+            dispatch(taskChange({ text, id, completed: false, edit: false }));
+          }}
+        >
+          <BsCheckCircleFill color="white" size="1.5rem" />
+        </button>
+        <p>{text}</p>
+      </div>
+      {hovered && (
+        <div className="flex gap-2">
+          <button
+            title="Delete"
+            onClick={() => {
+              dispatch(deleteTask(id));
+            }}
+          >
+            <BsTrashFill color="white" size="1.2rem" />
+          </button>
+        </div>
+      )}
     </div>
   );
 }
