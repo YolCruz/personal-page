@@ -7,7 +7,7 @@ export default function Title() {
   );
   return (
     <div>
-      <p className="font-medium text-2xl">
+      <p className="font-medium text-xl sm:text-2xl md:text-3xl">
         <span className="font-light mr-1">{completed}</span> Tasks completed
       </p>
     </div>

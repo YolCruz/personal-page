@@ -16,7 +16,7 @@ export default function Timer() {
     }
   }, []);
   return (
-    <div className="flex flex-col gap-9">
+    <div className="flex flex-col gap-9 md:self-center md:px-20 xl:px-36">
       <Modes />
       <Clock />
       <Buttons />

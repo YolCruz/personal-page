@@ -18,7 +18,7 @@ export default function TasksContainer() {
   const dispatch = usePomodoroDispatch();
 
   return (
-    <div className="flex-grow border-2 border-blue-4 rounded-xl p-5 flex flex-col gap-4">
+    <div className="flex-grow border-2 border-blue-4 rounded-xl p-5 flex flex-col gap-4 md:border-0 md:p-0 md:flex-grow-0">
       {unCompleted
         .sort((a, b) => a.id - b.id)
         .map((task) => {

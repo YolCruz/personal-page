@@ -7,7 +7,7 @@ export default function AddTask() {
   const dispatch = usePomodoroDispatch();
   return (
     <button
-      className="flex-grow relative border border-dashed border-gray-500 rounded-xl p-4 text-left font-medium text-lg flex items-center gap-3 hover:bg-gray-800 active:-top-1"
+      className="flex-grow relative border border-dashed border-gray-500 rounded-xl p-4 text-left font-medium text-base xs:text-lg flex items-center gap-3 hover:bg-gray-800 active:-top-1"
       onClick={() => dispatch(addingTask(true))}
     >
       <span>

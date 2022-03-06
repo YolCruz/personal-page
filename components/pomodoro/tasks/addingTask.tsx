@@ -23,7 +23,7 @@ export default function AddingTask() {
   return (
     <div
       ref={ref}
-      className={`flex-grow border border-gray-500 rounded-xl p-4 text-lg flex flex-col gap-8 opacity-0 ${anims.slideIn}`}
+      className={`flex-grow border border-gray-500 rounded-xl p-4 text-base xs:text-lg flex flex-col gap-8 opacity-0 ${anims.slideIn}`}
     >
       <TextareaAutosize
         className="bg-transparent outline-none break-all"
@@ -43,7 +43,7 @@ export default function AddingTask() {
       />
       <div className="flex gap-5">
         <button
-          className="flex-grow py-2 rounded-lg text-base bg-blue-700"
+          className="flex-grow py-2 rounded-lg text-sm xs:text-base bg-blue-700"
           onClick={() => {
             dispatch(addTask(text));
             setText("");
@@ -52,7 +52,7 @@ export default function AddingTask() {
           Save
         </button>
         <button
-          className="flex-grow py-2 rounded-lg text-base bg-gray-800"
+          className="flex-grow py-2 rounded-lg text-sm xs:text-base bg-gray-800"
           onClick={() => dispatch(addingTask(false))}
         >
           Cancel

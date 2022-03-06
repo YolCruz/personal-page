@@ -27,7 +27,7 @@ export default function EditTask({ text, id }: Props) {
   return (
     <div
       ref={ref}
-      className={`flex-grow border border-gray-500 rounded-xl p-4 text-lg flex flex-col gap-8 opacity-0 ${anims.slideIn}`}
+      className={`flex-grow border border-gray-500 rounded-xl p-4 text-base xs:text-lg flex flex-col gap-8 opacity-0 ${anims.slideIn}`}
     >
       <TextareaAutosize
         className="bg-transparent outline-none break-all"

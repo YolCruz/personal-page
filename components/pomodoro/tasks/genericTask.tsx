@@ -1,6 +1,6 @@
 import React from "react";
 import { BsCheck, BsTrashFill, BsFillPencilFill } from "react-icons/bs";
-import { useHover } from "@mantine/hooks";
+import { useHover, useViewportSize } from "@mantine/hooks";
 import anims from "styles/animations.module.scss";
 import { usePomodoroDispatch } from "../store/hooks";
 import { taskChange, deleteTask } from "../store/tasksSlice";
@@ -14,11 +14,12 @@ export default function Task({ text, id }: Props) {
   const dispatch = usePomodoroDispatch();
 
   const { hovered, ref } = useHover();
+  const { height, width } = useViewportSize();
 
   return (
     <div
       ref={ref}
-      className={`flex-grow border border-gray-500 rounded-xl p-4 text-left font-medium text-lg flex items-center justify-between opacity-0 ${anims.slideIn}`}
+      className={`flex-grow border border-gray-500 rounded-xl p-4 text-left font-medium text-base xs:text-lg flex items-center justify-between opacity-0 ${anims.slideIn}`}
     >
       <div className="flex gap-3 items-center">
         <button
@@ -40,15 +41,15 @@ export default function Task({ text, id }: Props) {
         </button>
         <p>{text}</p>
       </div>
-      {hovered && (
-        <div className="flex gap-2">
+      {width < 650 ? (
+        <div className="flex gap-3">
           <button
             title="Edit"
             onClick={() => {
               dispatch(taskChange({ text, id, completed: false, edit: true }));
             }}
           >
-            <BsFillPencilFill size="1.2rem" />
+            <BsFillPencilFill size="1rem" />
           </button>
           <button
             title="Delete"
@@ -56,9 +57,32 @@ export default function Task({ text, id }: Props) {
               dispatch(deleteTask(id));
             }}
           >
-            <BsTrashFill size="1.2rem" />
+            <BsTrashFill size="1rem" />
           </button>
         </div>
+      ) : (
+        hovered && (
+          <div className="flex gap-2">
+            <button
+              title="Edit"
+              onClick={() => {
+                dispatch(
+                  taskChange({ text, id, completed: false, edit: true })
+                );
+              }}
+            >
+              <BsFillPencilFill size="1.2rem" />
+            </button>
+            <button
+              title="Delete"
+              onClick={() => {
+                dispatch(deleteTask(id));
+              }}
+            >
+              <BsTrashFill size="1.2rem" />
+            </button>
+          </div>
+        )
       )}
     </div>
   );

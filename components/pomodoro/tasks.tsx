@@ -12,6 +12,7 @@ import {
 export default function Tasks() {
   const tasks = usePomodoroSelector((state) => state.tasks.tasks);
   const dispatch = usePomodoroDispatch();
+
   useEffect(() => {
     const data: TasksUpdate = JSON.parse(localStorage.getItem("tasks"));
     if (localStorage["tasks"]) {
@@ -24,7 +25,7 @@ export default function Tasks() {
     dispatch(updateLastIndex());
   }, [tasks]);
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 md:border-l-2 md:border-blue-4 md:px-8 md:pt-10 md:gap-6">
       <Title />
       <TasksContainer />
     </div>

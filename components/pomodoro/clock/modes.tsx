@@ -37,7 +37,7 @@ export default function Modes() {
   return (
     <div className="flex justify-center gap-[5px]">
       <button
-        className="flex-grow py-[10px] text-lg rounded-md border border-blue-4 font-medium flex justify-center"
+        className="flex-grow py-[10px] text-base sm:text-lg md:text-xl rounded-md border border-blue-4 font-medium flex justify-center"
         style={{
           backgroundColor: workColor,
           boxShadow: mode === 1 ? shadow : "",
@@ -49,7 +49,7 @@ export default function Modes() {
         Work <span className="ml-2 font-bold">{workCompleted}</span>
       </button>
       <button
-        className="bg-[#201B1B] flex-grow py-[10px] text-lg rounded-md border border-blue-4 font-medium"
+        className="bg-[#201B1B] flex-grow py-[10px] text-base sm:text-lg md:text-xl rounded-md border border-blue-4 font-medium"
         style={{
           backgroundColor: restColor,
           boxShadow: mode === 2 ? shadow : "",
@@ -61,7 +61,7 @@ export default function Modes() {
         Rest <span className="ml-2 font-bold">{restCompleted}</span>
       </button>
       <button
-        className="bg-[#201B1B] flex-grow py-[10px] text-lg rounded-md border border-blue-4 font-medium"
+        className="bg-[#201B1B] flex-grow py-[10px] text-base sm:text-lg md:text-xl rounded-md border border-blue-4 font-medium"
         style={{
           backgroundColor: longRestColor,
           boxShadow: mode === 3 ? shadow : "",

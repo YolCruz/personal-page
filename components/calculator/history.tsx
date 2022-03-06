@@ -1,5 +1,5 @@
 import styles from "styles/websites/calculator.module.scss";
-import { History } from "pages/page/calculator";
+import { History } from "pages/calculator";
 import React from "react";
 
 interface Props {

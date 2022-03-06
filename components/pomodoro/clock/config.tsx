@@ -33,7 +33,7 @@ export default function Config({ setOpen }: Props) {
         <ConfigTimer setTimerConfig={setTimerConfig} />
       </div>
       <div
-        className="flex-col gap-3 text-lg top-[28%]"
+        className="flex-col gap-3 text-base sm:text-lg md:text-xl top-[28%]"
         style={{
           display: timerConfig ? "none" : "flex",
         }}
@@ -41,7 +41,7 @@ export default function Config({ setOpen }: Props) {
         <div className="flex justify-between items-center">
           <p>Mode</p>
           <button className="mr-1" onClick={() => setTimerConfig(true)}>
-            <IoIosArrowForward size={20} />
+            <IoIosArrowForward size="1.3rem" />
           </button>
         </div>
         <div className="flex justify-between items-center gap-5">

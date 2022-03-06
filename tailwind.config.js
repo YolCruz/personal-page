@@ -45,6 +45,7 @@ module.exports = {
       screens: {
         "md-min-max": { min: "640px", max: "867px" },
         "sm-max": { max: "641px" },
+        "xs" : "400px",
       },
       backgroundImage: {
         "waves-pattern": "url('/background wave.svg')",
