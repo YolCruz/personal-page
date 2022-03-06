@@ -5,13 +5,13 @@ export default function Mobile() {
   return (
     <div className="md:hidden flex flex-col py-4 gap-10">
         <AppDescriptionMobile
-          name="Pomodoro App"
-          description="Work on your projects using the Pomodoro technique, with 25 minutes for work and 5 minutes for rest."
-          conceptsUsed={["React", "Typescript", "Sass", "Tailwind"]}
+          name="Pomodoro with task manager"
+          description="Pomodoro timer with 3 different levels to choose from and a task manager to keep track of your archivements"
+          conceptsUsed={["React", "Redux", "Typescript", "Sass", "Tailwind", "Figma"]}
           image="/pomodoro_mobile.png"
           w={432}
           h={833}
-          link="/page/pomodoro"
+          link="/pomodoro"
           alt="How the pomodoro app looks"
         />
         <AppDescriptionMobile
@@ -21,7 +21,7 @@ export default function Mobile() {
           image="/calculator_mobile.png"
           w={818}
           h={1594}
-          link="/page/calculator"
+          link="/calculator"
           alt="How the calculator app looks"
         />
       </div>

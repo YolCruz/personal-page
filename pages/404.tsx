@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
+import React from "react";
 
 export default function Custom404() {
   return (
@@ -10,7 +11,12 @@ export default function Custom404() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="w-screen min-h-screen max-w-full flex flex-col  justify-center bg-dark-blue-main-1 px-10 gap-4">
+      <div
+        className="w-screen min-h-screen max-w-full flex flex-col  justify-center px-10 gap-4"
+        style={{
+          background: "linear-gradient(167.94deg, #2D2D2D 0%, #171717 100%)",
+        }}
+      >
         <h1 className="font-open-sans text-white text-5xl font-bold text-center py-2 border-b">
           Error 404
         </h1>

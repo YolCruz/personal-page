@@ -7,43 +7,18 @@ export function Website({
   children,
   title,
   description,
-  icon,
 }: {
   children: React.ReactNode;
   title: string;
   description?: string;
-  icon?: string;
 }) {
   return (
     <>
       <Head>
         <title>{title}</title>
-        {icon ? (
-          <link rel="icon" href={icon} />
-        ) : (
-          <link rel="icon" href="/YC.svg" />
-        )}
-        {description ? (
-          <meta name="description" content={description} />
-        ) : (
-          <></>
-        )}
+        {description && <meta name="description" content={description} />}
       </Head>
       <>{children}</>
-      <footer className="py-6 px-5 text-2xl bg-red-900 text-white w-screen max-w-full flex items-center justify-center">
-        <Link href="/">
-          <a className="flex gap-4">
-            <span
-              className="iconify"
-              data-icon="bx:bx-arrow-back"
-              style={{ color: "white" }}
-              data-width="30"
-              data-height="30"
-            />{" "}
-            Back home
-          </a>
-        </Link>
-      </footer>
     </>
   );
 }

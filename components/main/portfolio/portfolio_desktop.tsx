@@ -6,13 +6,13 @@ export default function Desktop() {
   return (
     <div className={`hidden md:grid md:my-8 ${styles.desktop} md:gap-x-16 md:gap-y-16`}>
       <AppDescriptionDesktop
-          name="Pomodoro App"
-          description="Work on your projects using the Pomodoro technique, with 25 minutes for work and 5 minutes for rest."
-          conceptsUsed={["React", "Typescript", "Sass", "Tailwind"]}
+          name="Pomodoro with task manager"
+          description="Pomodoro timer with 3 different levels to choose from and a task manager to keep track of your archivements"
+          conceptsUsed={["React", "Redux", "Typescript", "Sass", "Tailwind", "Figma"]}
           image="/pomodoro_desktop.png"
           w={1260}
           h={737}
-          link="/page/pomodoro"
+          link="/pomodoro"
           alt="How the pomodoro app looks"
         />
         <AppDescriptionDesktop
@@ -22,7 +22,7 @@ export default function Desktop() {
           image="/calculator_desktop.png"
           w={1260}
           h={737}
-          link="/page/calculator"
+          link="/calculator"
           alt="How the calculator app looks"
         />
     </div>
