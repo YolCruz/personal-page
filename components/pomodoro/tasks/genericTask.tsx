@@ -14,7 +14,7 @@ export default function Task({ text, id }: Props) {
   const dispatch = usePomodoroDispatch();
 
   const { hovered, ref } = useHover();
-  const { height, width } = useViewportSize();
+  const dims = useViewportSize();
 
   return (
     <div
@@ -41,7 +41,7 @@ export default function Task({ text, id }: Props) {
         </button>
         <p>{text}</p>
       </div>
-      {width < 650 ? (
+      {dims.width < 650 ? (
         <div className="flex gap-3">
           <button
             title="Edit"

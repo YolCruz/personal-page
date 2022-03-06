@@ -1,6 +1,6 @@
 {
   "name": "yolcruz",
-  "packageManager": "yarn@3.1.1",
+  "packageManager": "yarn@3.2.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.4.0",
     "@mantine/core": "^3.6.9",
     "@mantine/hooks": "^3.6.9",
     "@mantine/modals": "^3.6.9",
@@ -17,12 +18,11 @@
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "axios": "^0.26.0",
-    "emailjs-com": "^3.2.0",
     "eslint-plugin-react": "latest",
     "highlight.js": "^11.4.0",
     "isomorphic-dompurify": "^0.18.0",
     "markdown-it": "^12.3.2",
-    "mathjs": "^10.1.1",
+    "mathjs": "^10.3.0",
     "next": "^12.1.0",
     "plotly.js": "^2.9.0",
     "react": "^17.0.2",
@@ -47,7 +47,6 @@
     "eslint": "^8.9.0",
     "eslint-config-next": "^12.1.0",
     "postcss": "^8.4.6",
-    "redux-devtools": "^3.7.0",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.5.5"
   }

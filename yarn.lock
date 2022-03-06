@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 5
+  version: 6
   cacheKey: 8
 
 "@babel/code-frame@npm:^7.0.0":
@@ -69,7 +69,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.16.7, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.10.2, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.15.4, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.2, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
   version: 7.17.2
   resolution: "@babel/runtime@npm:7.17.2"
   dependencies:
@@ -96,6 +96,13 @@ __metadata:
   bin:
     findup: bin/findup.js
   checksum: 9496321caa276f2a560ebae0e7607ba009012e8eff16db68fb405561ec482606edecf1c5ce1956805d77721c2db34c4bd9e2e95a2be2eec1c5ae8bb289ed5fd2
+  languageName: node
+  linkType: hard
+
+"@emailjs/browser@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@emailjs/browser@npm:3.4.0"
+  checksum: d0d4640965a587360c1e83efe39abb457776881bc9274c2e1b6b64a20dfe3e4ecd9bb11b4fc84dc3b6289554235855e0c72a641e21b18ef65cf1db03985b2397
   languageName: node
   linkType: hard
 
@@ -963,7 +970,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prop-types@npm:*, @types/prop-types@npm:^15.7.3":
+"@types/prop-types@npm:*":
   version: 15.7.4
   resolution: "@types/prop-types@npm:15.7.4"
   checksum: ef6e1899e59b876c273811b1bd845022fc66d5a3d11cb38a25b6c566b30514ae38fe20a40f67622f362a4f4f7f9224e22d8da101cff3d6e97e11d7b4c307cfc1
@@ -2579,13 +2586,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emailjs-com@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "emailjs-com@npm:3.2.0"
-  checksum: c6d0a1d60786405482928efcb33e9fda9e1c131a0380a1861b73a1f1139923794fbbb6679d83c632b4a2cf2d2dbe08541dd68db61ce78db6ed28b6ed68b4e00f
-  languageName: node
-  linkType: hard
-
 "emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -3296,6 +3296,13 @@ __metadata:
   version: 4.1.3
   resolution: "fraction.js@npm:4.1.3"
   checksum: d00065afce4814998b6e42fd439bbed17edbd9616b134927dbd75ebe1b94d6eb0820c0ce0e2cf8f26100e552cb72aff83f4816ef90cb1b329b6d12a531a26aaa
+  languageName: node
+  linkType: hard
+
+"fraction.js@npm:^4.1.3":
+  version: 4.2.0
+  resolution: "fraction.js@npm:4.2.0"
+  checksum: 8c76a6e21dedea87109d6171a0ac77afa14205794a565d71cb10d2925f629a3922da61bf45ea52dbc30bce4d8636dc0a27213a88cbd600eab047d82f9a3a94c5
   languageName: node
   linkType: hard
 
@@ -4536,13 +4543,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.19":
-  version: 4.17.21
-  resolution: "lodash@npm:4.17.21"
-  checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
-  languageName: node
-  linkType: hard
-
 "loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
@@ -4649,22 +4649,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mathjs@npm:^10.1.1":
-  version: 10.1.1
-  resolution: "mathjs@npm:10.1.1"
+"mathjs@npm:^10.3.0":
+  version: 10.3.0
+  resolution: "mathjs@npm:10.3.0"
   dependencies:
-    "@babel/runtime": ^7.16.7
+    "@babel/runtime": ^7.17.2
     complex.js: ^2.0.15
     decimal.js: ^10.3.1
     escape-latex: ^1.2.0
-    fraction.js: ^4.1.2
+    fraction.js: ^4.1.3
     javascript-natural-sort: ^0.7.1
     seedrandom: ^3.0.5
     tiny-emitter: ^2.1.0
     typed-function: ^2.0.0
   bin:
     mathjs: bin/cli.js
-  checksum: 048544208a1e7054314a0ba83fcfd359dcead7875d58799b01f0d39d822fae95aed65d98c2c7b2dc0ca47c15ed2d3171bcae79036ab6b4e4d76ee6ca5b927b4d
+  checksum: 3fb3b66be9cf8e532b33c29cb28adf4fc023d2f3faded52527e3e39a03b9616c8691cb299a908d47247bbe31658443b655c4ab36eef1b59718305582d0138855
   languageName: node
   linkType: hard
 
@@ -5863,34 +5863,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"redux-devtools-instrument@npm:^1.10.0":
-  version: 1.10.0
-  resolution: "redux-devtools-instrument@npm:1.10.0"
-  dependencies:
-    lodash: ^4.17.19
-    symbol-observable: ^1.2.0
-  peerDependencies:
-    redux: ^3.4.0 || ^4.0.0
-  checksum: 16836ff893070e39ee7c7d429fa2478775216765cadfdda7ac1ca8931936da99a7b9c2047632853e0ee40e5001511183e707a46d9f5c4fedb605618f343aa5d7
-  languageName: node
-  linkType: hard
-
-"redux-devtools@npm:^3.7.0":
-  version: 3.7.0
-  resolution: "redux-devtools@npm:3.7.0"
-  dependencies:
-    "@types/prop-types": ^15.7.3
-    lodash: ^4.17.19
-    prop-types: ^15.7.2
-    redux-devtools-instrument: ^1.10.0
-  peerDependencies:
-    react: ^0.14.9 || ^15.3.0 || ^16.0.0
-    react-redux: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
-    redux: ^3.5.2 || ^4.0.0
-  checksum: 321c7499d0744cb5867fd0759fcdc845bdd30cb2aac740257f29e42c9582d967097f3648025a5e55509f42157f77b0ee7a8f7f4dd341f7bcee0b9c17255fd1fb
-  languageName: node
-  linkType: hard
-
 "redux-thunk@npm:^2.4.1":
   version: 2.4.1
   resolution: "redux-thunk@npm:2.4.1"
@@ -6625,13 +6597,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"symbol-observable@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "symbol-observable@npm:1.2.0"
-  checksum: 48ffbc22e3d75f9853b3ff2ae94a44d84f386415110aea5effc24d84c502e03a4a6b7a8f75ebaf7b585780bda34eb5d6da3121f826a6f93398429d30032971b6
-  languageName: node
-  linkType: hard
-
 "symbol-tree@npm:^3.2.4":
   version: 3.2.4
   resolution: "symbol-tree@npm:3.2.4"
@@ -6970,11 +6935,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.5.5#~builtin<compat/typescript>":
   version: 4.5.5
-  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"
+  resolution: "typescript@patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=bda367"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: c05c318d79c690f101d7ffb34cd6c7d6bbd884d3af9cefe7749ad0cd6be43c7082f098280982ca945dcba23fde34a08fed9602bb26540936baf8c0520727d3ba
+  checksum: 858c61fa63f7274ca4aaaffeced854d550bf416cff6e558c4884041b3311fb662f476f167cf5c9f8680c607239797e26a2ee0bcc6467fbc05bfcb218e1c6c671
   languageName: node
   linkType: hard
 
@@ -7460,6 +7425,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "yolcruz@workspace:."
   dependencies:
+    "@emailjs/browser": ^3.4.0
     "@mantine/core": ^3.6.9
     "@mantine/hooks": ^3.6.9
     "@mantine/modals": ^3.6.9
@@ -7477,14 +7443,13 @@ __metadata:
     "@typescript-eslint/parser": latest
     autoprefixer: ^10.4.2
     axios: ^0.26.0
-    emailjs-com: ^3.2.0
     eslint: ^8.9.0
     eslint-config-next: ^12.1.0
     eslint-plugin-react: latest
     highlight.js: ^11.4.0
     isomorphic-dompurify: ^0.18.0
     markdown-it: ^12.3.2
-    mathjs: ^10.1.1
+    mathjs: ^10.3.0
     next: ^12.1.0
     plotly.js: ^2.9.0
     postcss: ^8.4.6
@@ -7495,7 +7460,6 @@ __metadata:
     react-plotly.js: ^2.5.1
     react-redux: ^7.2.6
     react-textarea-autosize: ^8.3.3
-    redux-devtools: ^3.7.0
     sass: ^1.49.8
     tailwindcss: ^3.0.23
     typed.js: ^2.0.12

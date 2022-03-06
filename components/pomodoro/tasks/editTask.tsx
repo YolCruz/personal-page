@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import { useClickOutside } from "@mantine/hooks";
-import { usePomodoroDispatch, usePomodoroSelector } from "../store/hooks";
-import { updateLocalStorage, taskChange } from "../store/tasksSlice";
+import { usePomodoroDispatch } from "../store/hooks";
+import { taskChange } from "../store/tasksSlice";
 import anims from "styles/animations.module.scss";
 
 interface Props {

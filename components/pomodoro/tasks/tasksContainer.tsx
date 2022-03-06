@@ -4,7 +4,7 @@ import Completed from "./completedTask";
 import Task from "./genericTask";
 import AddingTask from "./addingTask";
 import EditTask from "./editTask";
-import { usePomodoroSelector, usePomodoroDispatch } from "../store/hooks";
+import { usePomodoroSelector } from "../store/hooks";
 
 export default function TasksContainer() {
   const adding = usePomodoroSelector((state) => state.tasks.adding);
@@ -14,8 +14,6 @@ export default function TasksContainer() {
   const completed = usePomodoroSelector((state) =>
     state.tasks.tasks.filter((task) => task.completed)
   );
-
-  const dispatch = usePomodoroDispatch();
 
   return (
     <div className="flex-grow border-2 border-blue-4 rounded-xl p-5 flex flex-col gap-4 md:border-0 md:p-0 md:flex-grow-0">

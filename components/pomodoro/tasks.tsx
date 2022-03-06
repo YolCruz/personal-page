@@ -18,12 +18,12 @@ export default function Tasks() {
     if (localStorage["tasks"]) {
       dispatch(updateTasks(data));
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(updateLocalStorage());
     dispatch(updateLastIndex());
-  }, [tasks]);
+  }, [tasks, dispatch]);
   return (
     <div className="flex flex-col gap-3 md:border-l-2 md:border-blue-4 md:px-8 md:pt-10 md:gap-6">
       <Title />

@@ -7,12 +7,10 @@ export function Website({
   children,
   title,
   description,
-  icon,
 }: {
   children: React.ReactNode;
   title: string;
   description?: string;
-  icon?: string;
 }) {
   return (
     <>

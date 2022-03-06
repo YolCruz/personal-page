@@ -1,4 +1,4 @@
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import React, { FormEvent, useEffect, useRef, useState } from "react";
 import animations from "styles/animations.module.scss";
 import ErrorPromp from "./error-promp";

@@ -14,7 +14,7 @@ export default function Timer() {
       );
       dispatch(updatePomodoros(data));
     }
-  }, []);
+  }, [dispatch]);
   return (
     <div className="flex flex-col gap-9 md:self-center md:px-20 xl:px-36">
       <Modes />

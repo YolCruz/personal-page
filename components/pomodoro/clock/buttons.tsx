@@ -35,7 +35,7 @@ export default function Buttons() {
 
   const [open, setOpen] = useState(false);
 
-  const { height, width } = useViewportSize();
+  const dims = useViewportSize();
 
   useEffect(() => {
     if (currentSec === totalSec + 1) {
@@ -63,7 +63,15 @@ export default function Buttons() {
         dispatch(buttonStyle(0));
       }
     }
-  }, [currentSec]);
+  }, [
+    currentSec,
+    autoStart,
+    dispatch,
+    interval,
+    selectedTimer,
+    totalSec,
+    workCompleted,
+  ]);
 
   return (
     <>
@@ -101,7 +109,7 @@ export default function Buttons() {
           onClick={() => setOpen(true)}
           title="Configuration"
         >
-          {width < 768 ? (
+          {dims.width < 768 ? (
             <BsFillGearFill color="white" size="1.5rem" />
           ) : (
             <BsFillGearFill color="white" size="2rem" />
@@ -121,7 +129,7 @@ export default function Buttons() {
           }}
           title="Restart session"
         >
-          {width < 768 ? (
+          {dims.width < 768 ? (
             <MdRestartAlt color="white" size="1.5rem" />
           ) : (
             <MdRestartAlt color="white" size="2rem" />

@@ -8,7 +8,7 @@ export default function Clock() {
     return `conic-gradient(#0D58CA ${deg}deg,#353940 ${deg}deg)`;
   });
 
-  const { height, width } = useViewportSize();
+  const dims = useViewportSize();
   const { minutes, seconds } = usePomodoroSelector((state) => {
     const remainingSec = Math.max(
       Math.floor((state.timer.totalSec - state.timer.currentSec) % 60),
@@ -30,7 +30,7 @@ export default function Clock() {
         background: currentDegrees,
       }}
       className={`aspect-square w-full max-w-xl ${
-        height < 650 ? "max-h-[21rem]" : ""
+        dims.height < 650 ? "max-h-[21rem]" : ""
       } rounded-full flex items-center justify-center md:self-center`}
     >
       <div

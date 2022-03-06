@@ -22,7 +22,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" type="image/x-icon" href="/YC.svg" />
-          <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
         </Head>
         <body>
           <Main />

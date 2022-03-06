@@ -14,7 +14,7 @@ interface Props {
 export default function Completed({ text, id }: Props) {
   const dispatch = usePomodoroDispatch();
 
-  const { height, width } = useViewportSize();
+  const dims = useViewportSize();
   const { hovered, ref } = useHover();
 
   return (
@@ -32,7 +32,7 @@ export default function Completed({ text, id }: Props) {
         </button>
         <p>{text}</p>
       </div>
-      {width < 650 ? (
+      {dims.width < 650 ? (
         <div className="flex gap-3">
         <button
           title="Delete"
