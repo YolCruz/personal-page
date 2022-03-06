@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Desktop() {
   return (
-    <div className={`hidden md:grid md:my-8 ${styles.desktop} md:gap-x-16 md:gap-y-16`}>
+    <div className={`hidden md:grid md:my-8 ${styles.desktop} md:gap-x-16 md:gap-y-16 md:items-end`}>
       <AppDescriptionDesktop
           name="Pomodoro with task manager"
           description="Pomodoro timer with 3 different levels to choose from and a task manager to keep track of your archivements"

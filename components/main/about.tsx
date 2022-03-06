@@ -19,7 +19,7 @@ export default function About() {
     const options = {
       strings: [
         "solving code challenges",
-        "building web applications",
+        "building websites",
         "playing video games",
         "learning new things",
       ],
