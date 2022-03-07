@@ -4,12 +4,10 @@ export const options: AxiosRequestConfig = {
   method: "GET",
   url: "https://alpha-vantage.p.rapidapi.com/query",
   params: {
-    function: "FX_INTRADAY",
-    interval: "5min",
-    to_symbol: "USD",
+    function: "FX_WEEKLY",
     from_symbol: "EUR",
+    to_symbol: "USD",
     datatype: "json",
-    outputsize: "compact",
   },
   headers: {
     "x-rapidapi-host": "alpha-vantage.p.rapidapi.com",
