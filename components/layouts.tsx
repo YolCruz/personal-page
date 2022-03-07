@@ -23,22 +23,28 @@ export function Website({
   );
 }
 
-export function AppDescriptionMobile({
+export function AppDescription({
   name,
   description,
   conceptsUsed,
-  image,
-  w,
-  h,
+  imageMobile,
+  widthMobile,
+  heightMobile,
+  imageDesktop,
+  widthDesktop,
+  heightDesktop,
   link,
   alt,
 }: {
   name: string;
   description: string;
   conceptsUsed: string[];
-  image: string;
-  w: number;
-  h: number;
+  imageMobile: StaticImageData;
+  widthMobile: number;
+  heightMobile: number;
+  imageDesktop: StaticImageData;
+  widthDesktop: number;
+  heightDesktop: number;
   link: string;
   alt: string;
 }) {
@@ -47,60 +53,26 @@ export function AppDescriptionMobile({
       <h1 className="text-green-1 font-raleway font-bold text-2xl md:text-3xl text-center">
         {name}
       </h1>
-      <div className="w-7/12 max-w-xs mx-auto mt-2">
-        <Image src={image} width={w} height={h} alt={alt} />
+      <div className="w-7/12 max-w-xs mx-auto mt-2 md:hidden">
+        <Image
+          src={imageMobile}
+          width={widthMobile}
+          height={heightMobile}
+          placeholder="blur"
+          alt={alt}
+        />
+      </div>
+      <div className="hidden md:block md:w-9/12 md:mx-auto md:mt-2">
+        <Image
+          src={imageDesktop}
+          width={widthDesktop}
+          height={heightDesktop}
+          placeholder="blur"
+          alt={alt}
+        />
       </div>
       <div className="font-raleway flex flex-col items-center gap-3 mx-1">
-        <p className="text-white text-center text-xl md:text-2xl">
-          {description}
-        </p>
-        <p className="text-green-1 text-center text-xl md:text-2xl font-medium">
-          {conceptsUsed.map((concept) => {
-            if (concept === conceptsUsed[conceptsUsed.length - 1]) {
-              return `${concept}`;
-            }
-            return `${concept} • `;
-          })}
-        </p>
-        <Link href={link}>
-          <a className="py-2 px-16 border-2 rounded-full text-white text-xl md:text-2xl border-yellow-1 bg-gradient-to-b from-blue-3">
-            Check it out
-          </a>
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-export function AppDescriptionDesktop({
-  name,
-  description,
-  conceptsUsed,
-  image,
-  w,
-  h,
-  link,
-  alt,
-}: {
-  name: string;
-  description: string;
-  conceptsUsed: string[];
-  image: string;
-  w: number;
-  h: number;
-  link: string;
-  alt: string;
-}) {
-  return (
-    <div>
-      <h1 className="text-green-1 font-raleway font-bold text-2xl md:text-3xl text-center">
-        {name}
-      </h1>
-      <div className="w-9/12 mx-auto mt-2">
-        <Image src={image} width={w} height={h} alt={alt} />
-      </div>
-      <div className="font-raleway flex flex-col items-center gap-3 mx-1">
-        <p className="text-white text-center text-xl md:text-2xl">
+        <p className="text-white text-center text-xl lg:text-2xl">
           {description}
         </p>
         <p className="text-green-1 text-center text-xl md:text-2xl font-medium">
