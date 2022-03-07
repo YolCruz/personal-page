@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { AiFillHome } from "react-icons/ai";
 import { Provider } from "react-redux";
