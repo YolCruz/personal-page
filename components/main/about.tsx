@@ -4,6 +4,7 @@ import animations from "styles/animations.module.scss";
 import { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import React from "react";
+import ProfilePicture from "public/Me_Avatar.jpg"
 
 export default function About() {
   const [anim, setAnim] = useState("");
@@ -57,7 +58,8 @@ export default function About() {
         <div className="h-fit flex flex-col justify-center items-center gap-10">
           <div className="border-8 border-blue-500 w-fit h-fit rounded-full flex justify-center items-center">
             <Image
-              src="/Me_Avatar2.jpg"
+              src={ProfilePicture}
+              placeholder="blur"
               width={200}
               height={200}
               alt="How the developer looks"
