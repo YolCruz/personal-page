@@ -30,7 +30,7 @@ export default function Projects() {
         imageDesktop={quoteDesktop}
         widthDesktop={1260}
         heightDesktop={737}
-        link="/pomodoro"
+        link="/random-quote"
         alt="How the quote app looks"
       />
       <AppDescription
