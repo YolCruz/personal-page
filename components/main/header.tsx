@@ -32,7 +32,7 @@ export default function Header() {
           <a href="#portfolio">PORTFOLIO</a>
           <a href="#contact">CONTACT</a>
         </div>
-        <div className="flex gap-2 items-center mb-28">
+        <div className="flex gap-2 mb-28 md:mb-0">
           <a
             href="https://github.com/YolCruz"
             target="_blank"
