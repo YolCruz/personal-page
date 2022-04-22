@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import TasksContainer from "./tasks/tasksContainer";
 import Title from "./tasks/title";
 import { usePomodoroDispatch, usePomodoroSelector } from "./store/hooks";
@@ -18,7 +18,7 @@ export default function Tasks() {
     if (localStorage["tasks"]) {
       dispatch(updateTasks(data));
     }
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     dispatch(updateLocalStorage());
